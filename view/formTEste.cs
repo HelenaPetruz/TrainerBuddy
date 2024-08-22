@@ -11,39 +11,20 @@ using System.Windows.Forms;
 
 namespace view
 {
-    public partial class TrainnerBuddy1 : Form
+    public partial class TrainnerBuddy2 : Form
     {
-        //private TrainnerBuddy2 frm;
-
-
-        public TrainnerBuddy1()
+        TrainnerBuddy1 frm;
+        public TrainnerBuddy2()
         {
-
-            //frm = new TrainnerBuddy2();
-
-            Thread thread = new Thread(new ThreadStart(splashScreen));
-            thread.Start();
-            Thread.Sleep(5000);
-
+            frm = new TrainnerBuddy1(1);
+            
             InitializeComponent();
-            thread.Abort();
-        }
-
-        public TrainnerBuddy1(int gambi)
-        {
-            InitializeComponent();
-        }
-
-
-
-        private void splashScreen()
-        {
-           Application.Run(new SplashScreen());
+      
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -67,13 +48,12 @@ namespace view
 
         }
 
-        private void lblCadastro1_Click(object sender, EventArgs e)
+        private void btnEntrar1_Click(object sender, EventArgs e)
         {
-            //frm.Show();
-            TrainnerBuddy2 frm = new TrainnerBuddy2();
+            this.Close();
             frm.Show();
-            this.Hide();
-        
+           
+
         }
     }
 }

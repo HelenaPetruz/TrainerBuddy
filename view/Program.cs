@@ -16,7 +16,7 @@ namespace view
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TrainnerBuddy());
+            Application.Run(new TrainnerBuddy1());
         }
     }
 }
