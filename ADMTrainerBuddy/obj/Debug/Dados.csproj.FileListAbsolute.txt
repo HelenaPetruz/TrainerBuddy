@@ -1,0 +1,5 @@
+E:\2024\PI\tccTrainerBuddy\ADMTrainerBuddy\bin\Debug\ADMTrainerBuddy.dll
+E:\2024\PI\tccTrainerBuddy\ADMTrainerBuddy\bin\Debug\ADMTrainerBuddy.pdb
+E:\2024\PI\tccTrainerBuddy\ADMTrainerBuddy\obj\Debug\Dados.csproj.CoreCompileInputs.cache
+E:\2024\PI\tccTrainerBuddy\ADMTrainerBuddy\obj\Debug\ADMTrainerBuddy.dll
+E:\2024\PI\tccTrainerBuddy\ADMTrainerBuddy\obj\Debug\ADMTrainerBuddy.pdb
