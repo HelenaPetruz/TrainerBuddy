@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ADMTrainerBuddy"
+    "\\ADMTrainerBuddy",
+    "\\view"
   ],
-  "SelectedNode": "\\ADMTrainerBuddy\\Class1.cs",
+  "SelectedNode": "\\view\\Form2.cs",
   "PreviewInSolutionExplorer": false
 }
