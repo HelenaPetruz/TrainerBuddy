@@ -100,6 +100,7 @@ namespace view
             this.btnEntrar1.TabIndex = 5;
             this.btnEntrar1.Text = "Entrar";
             this.btnEntrar1.UseVisualStyleBackColor = false;
+            this.btnEntrar1.Click += new System.EventHandler(this.btnEntrar1_Click);
             // 
             // label11
             // 

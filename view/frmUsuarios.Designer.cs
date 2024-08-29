@@ -1,7 +1,7 @@
 ﻿
 namespace view
 {
-    partial class TrainnerBuddy3
+    partial class TrainnerBuddy4
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -38,6 +38,7 @@ namespace view
             this.btnCaixa = new System.Windows.Forms.Button();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -66,6 +67,7 @@ namespace view
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(169)))), ((int)(((byte)(33)))));
+            this.panel1.Controls.Add(this.btnVoltar);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button2);
@@ -80,11 +82,12 @@ namespace view
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 14);
+            this.label1.Location = new System.Drawing.Point(72, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 39);
+            this.label1.Size = new System.Drawing.Size(163, 39);
             this.label1.TabIndex = 3;
-            this.label1.Text = "TrainnerBuddy";
+            this.label1.Text = "Usuários";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblTitulo
             // 
@@ -125,13 +128,13 @@ namespace view
             this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCaixa.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCaixa.Image = global::view.Properties.Resources.caixa;
+            this.btnCaixa.Image = global::view.Properties.Resources.busca;
             this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCaixa.Location = new System.Drawing.Point(12, 121);
+            this.btnCaixa.Location = new System.Drawing.Point(9, 121);
             this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(204, 72);
+            this.btnCaixa.Size = new System.Drawing.Size(210, 68);
             this.btnCaixa.TabIndex = 2;
-            this.btnCaixa.Text = "Fluxo de Caixa";
+            this.btnCaixa.Text = "Buscar Usuários";
             this.btnCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCaixa.UseVisualStyleBackColor = true;
             // 
@@ -143,13 +146,13 @@ namespace view
             this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelatorio.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnRelatorio.Image = global::view.Properties.Resources.relatorio;
+            this.btnRelatorio.Image = global::view.Properties.Resources.excluir;
             this.btnRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorio.Location = new System.Drawing.Point(12, 69);
+            this.btnRelatorio.Location = new System.Drawing.Point(9, 69);
             this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(167, 46);
+            this.btnRelatorio.Size = new System.Drawing.Size(207, 46);
             this.btnRelatorio.TabIndex = 1;
-            this.btnRelatorio.Text = "Relatórios";
+            this.btnRelatorio.Text = "Excluir Usuários";
             this.btnRelatorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRelatorio.UseVisualStyleBackColor = true;
             // 
@@ -165,12 +168,27 @@ namespace view
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.Location = new System.Drawing.Point(12, 6);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(148, 46);
+            this.btnUsuarios.Size = new System.Drawing.Size(190, 46);
             this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.Text = "Alterar Dados";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Image = global::view.Properties.Resources.voltar;
+            this.btnVoltar.Location = new System.Drawing.Point(3, 12);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(63, 50);
+            this.btnVoltar.TabIndex = 5;
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // button1
             // 
@@ -265,7 +283,7 @@ namespace view
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // TrainnerBuddy3
+            // TrainnerBuddy4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -275,7 +293,7 @@ namespace view
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelCabecalho1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "TrainnerBuddy3";
+            this.Name = "TrainnerBuddy4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrainnerBuddy";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -305,6 +323,7 @@ namespace view
         private System.Windows.Forms.Button btnCaixa;
         private System.Windows.Forms.Button btnRelatorio;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }
 

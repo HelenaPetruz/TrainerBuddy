@@ -15,9 +15,11 @@ namespace view
     {
         //private TrainnerBuddy2 frm;
 
+      
 
         public TrainnerBuddy1()
         {
+           
 
             //frm = new TrainnerBuddy2();
 
@@ -74,6 +76,13 @@ namespace view
             frm.Show();
             this.Hide();
         
+        }
+
+        private void btnEntrar1_Click(object sender, EventArgs e)
+        {
+            TrainnerBuddy3 frm = new TrainnerBuddy3();
+            frm.Show();
+            this.Hide();
         }
     }
 }

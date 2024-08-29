@@ -10,3 +10,5 @@ E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.exe
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.pdb
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.FormTEste.resources
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.AssemblyReference.cache
+E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.TrainnerBuddy3.resources
+E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.TrainnerBuddy4.resources

@@ -63,9 +63,29 @@ namespace view.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap busca {
+            get {
+                object obj = ResourceManager.GetObject("busca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap caixa {
             get {
                 object obj = ResourceManager.GetObject("caixa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap excluir {
+            get {
+                object obj = ResourceManager.GetObject("excluir", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +186,16 @@ namespace view.Properties {
         internal static System.Drawing.Bitmap usuarios {
             get {
                 object obj = ResourceManager.GetObject("usuarios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap voltar {
+            get {
+                object obj = ResourceManager.GetObject("voltar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

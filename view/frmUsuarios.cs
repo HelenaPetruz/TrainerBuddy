@@ -11,14 +11,18 @@ using System.Windows.Forms;
 
 namespace view
 {
-    public partial class TrainnerBuddy3 : Form
+    public partial class TrainnerBuddy4 : Form
     {
-        TrainnerBuddy4 frm;
-        public TrainnerBuddy3()
+     
+
+
+        public TrainnerBuddy4()
         {
-            frm = new TrainnerBuddy4();
+
             
             InitializeComponent();
+
+           
       
         }
 
@@ -50,16 +54,23 @@ namespace view
 
         private void btnEntrar1_Click(object sender, EventArgs e)
         {
+            TrainnerBuddy3 frm = new TrainnerBuddy3();
             this.Close();
             frm.Show();
            
 
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            TrainnerBuddy3 frm = new TrainnerBuddy3();
             this.Close();
-            frm.ShowDialog();
+            frm.Show();
         }
     }
 }
