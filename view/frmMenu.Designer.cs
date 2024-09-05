@@ -127,7 +127,7 @@ namespace view
             this.btnCaixa.ForeColor = System.Drawing.SystemColors.Window;
             this.btnCaixa.Image = global::view.Properties.Resources.caixa;
             this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCaixa.Location = new System.Drawing.Point(12, 121);
+            this.btnCaixa.Location = new System.Drawing.Point(12, 130);
             this.btnCaixa.Name = "btnCaixa";
             this.btnCaixa.Size = new System.Drawing.Size(204, 72);
             this.btnCaixa.TabIndex = 2;
@@ -143,13 +143,13 @@ namespace view
             this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelatorio.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnRelatorio.Image = global::view.Properties.Resources.relatorio;
+            this.btnRelatorio.Image = global::view.Properties.Resources.planos;
             this.btnRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorio.Location = new System.Drawing.Point(12, 69);
+            this.btnRelatorio.Location = new System.Drawing.Point(12, 67);
             this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(167, 46);
+            this.btnRelatorio.Size = new System.Drawing.Size(134, 57);
             this.btnRelatorio.TabIndex = 1;
-            this.btnRelatorio.Text = "Relatórios";
+            this.btnRelatorio.Text = "Planos";
             this.btnRelatorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRelatorio.UseVisualStyleBackColor = true;
             // 
