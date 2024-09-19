@@ -14,10 +14,13 @@ namespace view
     public partial class TrainnerBuddy3 : Form
     {
         TrainnerBuddy4 frm;
+        frmPlanos frmPlanos;
+        frmCaixa frmCaixa;
         public TrainnerBuddy3()
         {
             frm = new TrainnerBuddy4();
-            
+            frmPlanos = new frmPlanos();
+            frmCaixa = new frmCaixa();
             InitializeComponent();
       
         }
@@ -27,10 +30,7 @@ namespace view
             
         }
 
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+    
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -60,6 +60,23 @@ namespace view
         {
             this.Close();
             frm.ShowDialog();
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnRelatorio_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmPlanos.ShowDialog();
+        }
+
+        private void btnCaixa_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmCaixa.ShowDialog();
         }
     }
 }

@@ -72,5 +72,10 @@ namespace view
             this.Close();
             frm.Show();
         }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
