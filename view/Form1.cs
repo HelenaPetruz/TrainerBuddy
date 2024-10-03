@@ -81,10 +81,7 @@ namespace view
 
         private void btnEntrar1_Click(object sender, EventArgs e)
         {
-            DataTable pessoa;
-         pessoa = _pessoaControl.filterByEmail(txtUsuario1.Text);
-
-          
+           
                 TrainnerBuddy3 frm = new TrainnerBuddy3();
                 frm.Show();
                 this.Hide();
