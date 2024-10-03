@@ -19,8 +19,8 @@ namespace view
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar1.Increment(1);
-            if (progressBar1.Value == 100)
+            progressBar2.Increment(1);
+            if (progressBar2.Value == 100)
             {
                 timer1.Stop();
             }

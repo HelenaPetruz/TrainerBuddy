@@ -30,23 +30,24 @@ namespace view
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.progressBar2 = new MetroFramework.Controls.MetroProgressBar();
             this.SuspendLayout();
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 427);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(800, 23);
-            this.progressBar1.TabIndex = 0;
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 32;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar2.Location = new System.Drawing.Point(0, 427);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(800, 23);
+            this.progressBar2.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.progressBar2.TabIndex = 1;
             // 
             // SplashScreen
             // 
@@ -55,7 +56,8 @@ namespace view
             this.BackgroundImage = global::view.Properties.Resources.Trainer_Buddysplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.progressBar2);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -66,8 +68,7 @@ namespace view
         }
 
         #endregion
-
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
+        private MetroFramework.Controls.MetroProgressBar progressBar2;
     }
 }

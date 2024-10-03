@@ -45,5 +45,7 @@ E:\2024\PI\tccTrainerBuddy\view\bin\Debug\K4os.Compression.LZ4.xml
 E:\2024\PI\tccTrainerBuddy\view\bin\Debug\System.IO.Pipelines.xml
 E:\2024\PI\tccTrainerBuddy\view\bin\Debug\K4os.Hash.xxHash.xml
 E:\2024\PI\tccTrainerBuddy\view\bin\Debug\System.Numerics.Vectors.xml
-E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.exe.config
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.CopyComplete
+E:\2024\PI\tccTrainerBuddy\view\bin\Debug\MetroFramework.Design.dll
+E:\2024\PI\tccTrainerBuddy\view\bin\Debug\MetroFramework.dll
+E:\2024\PI\tccTrainerBuddy\view\bin\Debug\MetroFramework.Fonts.dll

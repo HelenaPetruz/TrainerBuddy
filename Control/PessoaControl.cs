@@ -59,5 +59,10 @@ namespace Control
             return _pessoaRepository.FilterByName(nome);
         }
 
+        public DataTable filterByEmail(string email)
+        {
+            return _pessoaRepository.FilterByEmail(email);
+        }
+
     }
 }

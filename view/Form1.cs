@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +16,12 @@ namespace view
     {
         //private TrainnerBuddy2 frm;
 
-      
+        private readonly PessoaControl _pessoaControl;
 
         public TrainnerBuddy1()
         {
-           
 
+            _pessoaControl = new PessoaControl();
             //frm = new TrainnerBuddy2();
 
             Thread thread = new Thread(new ThreadStart(splashScreen));
@@ -80,9 +81,13 @@ namespace view
 
         private void btnEntrar1_Click(object sender, EventArgs e)
         {
-            TrainnerBuddy3 frm = new TrainnerBuddy3();
-            frm.Show();
-            this.Hide();
+            DataTable pessoa;
+         pessoa = _pessoaControl.filterByEmail(txtUsuario1.Text);
+
+          
+                TrainnerBuddy3 frm = new TrainnerBuddy3();
+                frm.Show();
+                this.Hide();
+            }
         }
     }
-}

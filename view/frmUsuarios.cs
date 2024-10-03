@@ -126,5 +126,7 @@ namespace view
         {
             this.Close();
         }
+
+
     }
 }

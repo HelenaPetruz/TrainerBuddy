@@ -124,6 +124,7 @@ namespace Model
             return DtResultado;
         }
 
+
         public DataTable FilterByName (string pNome_usuario)
         {
             DataTable DtResultado = new DataTable("pessoa");
@@ -153,5 +154,36 @@ namespace Model
             return DtResultado;
 
         }
+
+        public DataTable FilterByEmail(string pEmail)
+        {
+            DataTable DtResultado = new DataTable("pessoa");
+            string selectSql;
+            try
+            {
+                Connection.getConnection();
+                if (!string.IsNullOrEmpty(pEmail))
+                {
+                    selectSql = String.Format("SELECT * FROM pessoa WHERE nome_usuario LIKE @pEmail");
+                    pEmail = '%' + pEmail + '%';
+                }
+                else
+                {
+                    selectSql = String.Format("SELECT * FROM pessoa");
+                }
+                MySqlCommand SqlCmd = new MySqlCommand(selectSql, Connection.SqlCon);
+                if (!string.IsNullOrEmpty(pEmail))
+                    SqlCmd.Parameters.AddWithValue("pEmail", pEmail);
+                MySqlDataAdapter SqlData = new MySqlDataAdapter(SqlCmd);
+                SqlData.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+
+        }
+
     }
 }
