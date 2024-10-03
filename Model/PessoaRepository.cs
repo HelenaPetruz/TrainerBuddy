@@ -164,7 +164,7 @@ namespace Model
                 Connection.getConnection();
                 if (!string.IsNullOrEmpty(pEmail))
                 {
-                    selectSql = String.Format("SELECT * FROM pessoa WHERE nome_usuario LIKE @pEmail");
+                    selectSql = String.Format("SELECT * FROM pessoa WHERE email LIKE @pEmail");
                     pEmail = '%' + pEmail + '%';
                 }
                 else
@@ -182,6 +182,40 @@ namespace Model
                 DtResultado = null;
             }
             return DtResultado;
+
+        }
+
+
+        public int ValidaEntrada (string pEmail, string pSenha)
+        {
+            string selectSql;
+
+            try
+            {
+                Connection.getConnection();
+                if (!string.IsNullOrEmpty(pEmail) && !string.IsNullOrEmpty(pSenha))
+                {
+                    selectSql = String.Format("SELECT * FROM pessoa WHERE nome_usuario LIKE @pEmail AND senha LIKE @pSenha");
+                    pEmail = '%' + pEmail + '%';
+                    pSenha = '%' + pSenha + '%';
+                }
+                else
+                {
+                    return 0;
+                }
+                MySqlCommand SqlCmd = new MySqlCommand(selectSql, Connection.SqlCon);
+                if (!string.IsNullOrEmpty(pEmail))
+                    SqlCmd.Parameters.AddWithValue("pEmail", pEmail);
+                    SqlCmd.Parameters.AddWithValue("pSenha", pSenha);
+                    MySqlDataAdapter SqlData = new MySqlDataAdapter(SqlCmd);
+           
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            return 1;
+
 
         }
 
