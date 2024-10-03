@@ -81,10 +81,16 @@ namespace view
 
         private void btnEntrar1_Click(object sender, EventArgs e)
         {
-           
+            if (_pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text) == 1)
+            {
                 TrainnerBuddy3 frm = new TrainnerBuddy3();
                 frm.Show();
                 this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Email ou senha incorretos", "Aviso do sistema", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
             }
         }
     }
