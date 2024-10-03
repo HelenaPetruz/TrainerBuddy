@@ -188,5 +188,18 @@
   <ItemGroup>
     <None Include="Resources\dinheiro.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Control\Control.csproj">
+      <Project>{87ae215c-1451-4edd-8936-3adf0f79bca5}</Project>
+      <Name>Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{33ae59c4-e3ae-46e6-8420-87ff4e49fd35}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trainer Buddysplash.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
