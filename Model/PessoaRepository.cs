@@ -196,6 +196,7 @@ namespace Model
             {
                 Connection.getConnection();
                 selectSql = "SELECT COUNT(*) FROM pessoa WHERE email = @pEmail AND senha = @pSenha";
+
                 MySqlCommand SqlCmd = new MySqlCommand(selectSql, Connection.SqlCon);
 
                 SqlCmd.Parameters.AddWithValue("@pEmail", pEmail);
