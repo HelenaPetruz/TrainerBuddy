@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Macs;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -186,29 +187,38 @@ namespace Model
         }
 
 
-        public int ValidaEntrada (string pEmail, string pSenha)
+        public string ValidaEntrada(string pEmail, string pSenha)
         {
             string selectSql;
-            int retorno = 0;
+            string resp = "";
 
             try
             {
                 Connection.getConnection();
-                selectSql = String.Format("SELECT * FROM pessoa WHERE email = @pEmail AND senha = @pSenha");
+                selectSql = "SELECT COUNT(*) FROM pessoa WHERE email = @pEmail AND senha = @pSenha";
                 MySqlCommand SqlCmd = new MySqlCommand(selectSql, Connection.SqlCon);
-                if (!string.IsNullOrEmpty(pEmail) && !string.IsNullOrEmpty(pSenha))
-                {
-                    SqlCmd.Parameters.AddWithValue("pEmail", pEmail);
-                    SqlCmd.Parameters.AddWithValue("pSenha", pSenha);
-                    retorno = SqlCmd.ExecuteNonQuery();
-                }
+
+                SqlCmd.Parameters.AddWithValue("@pEmail", pEmail);
+                SqlCmd.Parameters.AddWithValue("@pSenha", pSenha);
+
+             
+
+                int count = Convert.ToInt32(SqlCmd.ExecuteScalar());
+
+               
+
+                resp = count > 0 ? "SUCESSO" : "FALHA";
             }
             catch (Exception ex)
             {
-                return 0;
+                resp = "Erro: " + ex.Message;
             }
-
-            return retorno;
+            finally
+            {
+                if (Connection.SqlCon.State == ConnectionState.Open)
+                    Connection.SqlCon.Close();
+            }
+            return resp;
         }
 
     }

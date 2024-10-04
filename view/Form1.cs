@@ -81,7 +81,10 @@ namespace view
 
         private void btnEntrar1_Click(object sender, EventArgs e)
         {
-            if (_pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text) == 1)
+
+            string teste = _pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text);
+
+            if (_pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text).Equals( "SUCESSO"))
             {
                 TrainnerBuddy3 frm = new TrainnerBuddy3();
                 frm.Show();
@@ -89,7 +92,7 @@ namespace view
             }
             else
             {
-                MessageBox.Show("Email ou senha incorretos", "Aviso do sistema", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Email ou senha incorretos" + Convert.ToString(teste), "Aviso do sistema",  MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             }
         }

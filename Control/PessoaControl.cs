@@ -64,7 +64,7 @@ namespace Control
             return _pessoaRepository.FilterByEmail(email);
         }
 
-        public int ValidaEntrada (string email, string senha)
+        public string ValidaEntrada (string email, string senha)
         {
             return _pessoaRepository.ValidaEntrada(email, senha);
         }

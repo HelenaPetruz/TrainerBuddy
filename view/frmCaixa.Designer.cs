@@ -42,9 +42,7 @@ namespace view
             this.btnMaximizar1 = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCaixa = new System.Windows.Forms.Button();
             this.btnRelatorio = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
@@ -218,32 +216,12 @@ namespace view
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.Controls.Add(this.btnCaixa);
             this.panel2.Controls.Add(this.btnRelatorio);
-            this.panel2.Controls.Add(this.btnUsuarios);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 72);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(225, 409);
             this.panel2.TabIndex = 1;
-            // 
-            // btnCaixa
-            // 
-            this.btnCaixa.FlatAppearance.BorderSize = 0;
-            this.btnCaixa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnCaixa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaixa.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCaixa.Image = global::view.Properties.Resources.busca;
-            this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCaixa.Location = new System.Drawing.Point(9, 121);
-            this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(210, 68);
-            this.btnCaixa.TabIndex = 2;
-            this.btnCaixa.Text = "Buscar Usuários";
-            this.btnCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCaixa.UseVisualStyleBackColor = true;
             // 
             // btnRelatorio
             // 
@@ -253,33 +231,15 @@ namespace view
             this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRelatorio.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnRelatorio.Image = global::view.Properties.Resources.excluir;
+            this.btnRelatorio.Image = global::view.Properties.Resources.relatorio;
             this.btnRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorio.Location = new System.Drawing.Point(9, 69);
+            this.btnRelatorio.Location = new System.Drawing.Point(3, 6);
             this.btnRelatorio.Name = "btnRelatorio";
             this.btnRelatorio.Size = new System.Drawing.Size(207, 46);
             this.btnRelatorio.TabIndex = 1;
-            this.btnRelatorio.Text = "Excluir Usuários";
+            this.btnRelatorio.Text = "Gerar Relatório";
             this.btnRelatorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRelatorio.UseVisualStyleBackColor = true;
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnUsuarios.Image = global::view.Properties.Resources.usuarios;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(12, 6);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(190, 46);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "Alterar Dados";
-            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUsuarios.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -317,7 +277,7 @@ namespace view
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgUsuarios.Size = new System.Drawing.Size(557, 357);
+            this.dgUsuarios.Size = new System.Drawing.Size(557, 160);
             this.dgUsuarios.TabIndex = 0;
             // 
             // frmCaixa
@@ -359,8 +319,6 @@ namespace view
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_fechar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button btnCaixa;
         private System.Windows.Forms.Button btnRelatorio;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnVoltar;
