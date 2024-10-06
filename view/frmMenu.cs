@@ -78,5 +78,10 @@ namespace view
             this.Close();
             frmCaixa.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+        }
     }
 }
