@@ -29,7 +29,7 @@ namespace view
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCabecalho1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -42,9 +42,9 @@ namespace view
             this.btnMaximizar1 = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCaixa = new System.Windows.Forms.Button();
-            this.btnRelatorio = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnDesativar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
@@ -82,6 +82,7 @@ namespace view
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 72);
             this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnVoltar
             // 
@@ -220,68 +221,69 @@ namespace view
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.Controls.Add(this.btnCaixa);
-            this.panel2.Controls.Add(this.btnRelatorio);
-            this.panel2.Controls.Add(this.btnUsuarios);
+            this.panel2.Controls.Add(this.btnBuscar);
+            this.panel2.Controls.Add(this.btnDesativar);
+            this.panel2.Controls.Add(this.btnAlterar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 72);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(225, 409);
             this.panel2.TabIndex = 1;
             // 
-            // btnCaixa
+            // btnBuscar
             // 
-            this.btnCaixa.FlatAppearance.BorderSize = 0;
-            this.btnCaixa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnCaixa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaixa.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCaixa.Image = global::view.Properties.Resources.busca;
-            this.btnCaixa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCaixa.Location = new System.Drawing.Point(9, 121);
-            this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(210, 68);
-            this.btnCaixa.TabIndex = 2;
-            this.btnCaixa.Text = "Buscar Usuários";
-            this.btnCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCaixa.UseVisualStyleBackColor = true;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnBuscar.Image = global::view.Properties.Resources.busca;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(9, 121);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(210, 68);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.Text = "Buscar Usuários";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // btnRelatorio
+            // btnDesativar
             // 
-            this.btnRelatorio.FlatAppearance.BorderSize = 0;
-            this.btnRelatorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRelatorio.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnRelatorio.Image = global::view.Properties.Resources.excluir;
-            this.btnRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorio.Location = new System.Drawing.Point(9, 69);
-            this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(207, 46);
-            this.btnRelatorio.TabIndex = 1;
-            this.btnRelatorio.Text = "Excluir Usuários";
-            this.btnRelatorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRelatorio.UseVisualStyleBackColor = true;
+            this.btnDesativar.FlatAppearance.BorderSize = 0;
+            this.btnDesativar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnDesativar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnDesativar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesativar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesativar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnDesativar.Image = global::view.Properties.Resources.excluir;
+            this.btnDesativar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDesativar.Location = new System.Drawing.Point(9, 69);
+            this.btnDesativar.Name = "btnDesativar";
+            this.btnDesativar.Size = new System.Drawing.Size(207, 46);
+            this.btnDesativar.TabIndex = 1;
+            this.btnDesativar.Text = "Excluir Usuários";
+            this.btnDesativar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDesativar.UseVisualStyleBackColor = true;
             // 
-            // btnUsuarios
+            // btnAlterar
             // 
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnUsuarios.Image = global::view.Properties.Resources.usuarios;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(12, 6);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(190, 46);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "Alterar Dados";
-            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnAlterar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnAlterar.Image = global::view.Properties.Resources.usuarios;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterar.Location = new System.Drawing.Point(12, 6);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(190, 46);
+            this.btnAlterar.TabIndex = 0;
+            this.btnAlterar.Text = "Alterar Dados";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // panel3
             // 
@@ -311,14 +313,14 @@ namespace view
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgUsuarios.Location = new System.Drawing.Point(6, 40);
             this.dgUsuarios.Name = "dgUsuarios";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgUsuarios.Size = new System.Drawing.Size(557, 357);
             this.dgUsuarios.TabIndex = 0;
             // 
@@ -361,9 +363,9 @@ namespace view
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_fechar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button btnCaixa;
-        private System.Windows.Forms.Button btnRelatorio;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnDesativar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label label2;

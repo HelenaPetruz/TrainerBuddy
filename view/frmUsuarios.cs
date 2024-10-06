@@ -1,4 +1,5 @@
 ﻿using Control;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +40,7 @@ namespace view
             dgUsuarios.AllowUserToAddRows = false;
             dgUsuarios.AllowUserToDeleteRows = false;
             dgUsuarios.AllowUserToOrderColumns = true;
-            dgUsuarios.ReadOnly = true;
+            dgUsuarios.ReadOnly = false;
 
             tblPessoa = _pessoaControl.getAll();
 
@@ -142,6 +143,50 @@ namespace view
         private void button1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Pessoa pessoa = new Pessoa();
+           
+            int id;
+            string id1;
+            DialogResult dialog = new DialogResult();
+
+            dialog = MessageBox.Show("Deseja mesmo atualizar este usuario?", "Alert!", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.Yes)
+            {
+                id1 = dgUsuarios.CurrentRow.Cells[0].Value.ToString();
+                id = System.Convert.ToInt32(id1);
+                pessoa.idpessoa = id;
+                pessoa.nome_usuario = dgUsuarios.CurrentRow.Cells[1].Value.ToString();
+                pessoa.cpf = dgUsuarios.CurrentRow.Cells[2].Value.ToString();
+                pessoa.email = dgUsuarios.CurrentRow.Cells[3].Value.ToString();
+                if (_pessoaControl.Update(pessoa.idpessoa, pessoa.nome_usuario, pessoa.cpf, pessoa.email).Equals("SUCESSO"))
+                {
+                    MessageBox.Show("Usuario atualizado com sucesso");
+                    dgUsuarios.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao atualizar o usuario \n " + _pessoaControl.Update(pessoa.idpessoa, pessoa.nome_usuario, pessoa.cpf, pessoa.email));
+                    dgUsuarios.Refresh();
+                }
+
+            }
+            else {
+                MessageBox.Show("Falha ao atualizar o usuario FALHA NA AUTENTICACAO");
+                dgUsuarios.Refresh();
+
+            }
+
+
         }
     }
 }

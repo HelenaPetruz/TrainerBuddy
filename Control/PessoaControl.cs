@@ -17,18 +17,14 @@ namespace Control
             _pessoaRepository = new PessoaRepository();
         }
 
-        public string Update(string nome_usuario, string cpf, string email, string senha, int id_plano, int id_perfil)
+        public string Update(int idpessoa, string nome_usuario, string cpf, string email)
         {
             var pessoa = new Pessoa
             {
                 nome_usuario = nome_usuario,
                 cpf = cpf,
                 email = email,
-                senha = senha,
-                id_plano = id_plano,
-                id_perfil = id_perfil,
-
-
+                idpessoa = idpessoa,
             };
             return _pessoaRepository.Update(pessoa);
         }

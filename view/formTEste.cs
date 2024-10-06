@@ -66,7 +66,7 @@ namespace view
 
         private void btnEntrar1_Click(object sender, EventArgs e)
         {
-            string teste = _pessoaControl.Cadastro(txtUsuario1.Text, txtSenha1.Text, txtRepita.Text);
+          
 
             if (_pessoaControl.Cadastro(txtUsuario1.Text, txtSenha1.Text, txtRepita.Text).Equals("SUCESSO"))
             {
@@ -75,7 +75,7 @@ namespace view
             }
             else
             {
-                MessageBox.Show("Email ou senha inválidos "+ "\n Erro:" + Convert.ToString(teste), "Aviso do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Email ou senha inválidos ",  "Aviso do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

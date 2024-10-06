@@ -55,17 +55,15 @@ namespace Model
             try
             {
                 Connection.getConnection();
-                string updateSql = String.Format("UPDATE pessoa SET" +" nome_usuario = @pNome_usuario, cpf = @pCpf, email = @pEmail, senha = @pSenha, id_plano = @pId_plano, id_perfil = @pId_perfil"  + "WHERE idpessoa = @pIdpessoa");
+                string updateSql = String.Format("UPDATE pessoa SET" +" nome_usuario = @pNome_usuario, cpf = @pCpf, email = @pEmail"  + " WHERE idpessoa = @pIdpessoa");
                 MySqlCommand SqlCmd = new MySqlCommand(updateSql, Connection.SqlCon);
 
 
                 SqlCmd.Parameters.AddWithValue("pNome_usuario", pessoa.nome_usuario);
                 SqlCmd.Parameters.AddWithValue("pCpf", pessoa.cpf);
                 SqlCmd.Parameters.AddWithValue("pEmail", pessoa.email);
-                SqlCmd.Parameters.AddWithValue("pSenha", pessoa.senha);
-                SqlCmd.Parameters.AddWithValue("pId_plano", pessoa.id_plano);
-                SqlCmd.Parameters.AddWithValue("pId_perfil", pessoa.id_perfil);
-                SqlCmd.Parameters.AddWithValue("pIdpessoa", pessoa.idpessoa);
+                
+
                 resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
             }
             catch (Exception ex)
