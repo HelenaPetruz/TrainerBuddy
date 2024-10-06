@@ -8,7 +8,7 @@ using Model;
 
 namespace Control
 {
-     public class PessoaControl
+    public class PessoaControl
     {
         private PessoaRepository _pessoaRepository;
 
@@ -27,10 +27,10 @@ namespace Control
                 senha = senha,
                 id_plano = id_plano,
                 id_perfil = id_perfil,
-           
+
 
             };
-                return _pessoaRepository.Update(pessoa);
+            return _pessoaRepository.Update(pessoa);
         }
 
         public string Insert(Pessoa pessoa)
@@ -64,10 +64,15 @@ namespace Control
             return _pessoaRepository.FilterByEmail(email);
         }
 
-        public string ValidaEntrada (string email, string senha)
+        public string ValidaEntrada(string email, string senha)
         {
             return _pessoaRepository.ValidaEntrada(email, senha);
         }
 
+        public string Cadastro(string email, string senha, string Repita)
+        {
+            return _pessoaRepository.Cadastro(email, senha, Repita);
+
+        }
     }
 }

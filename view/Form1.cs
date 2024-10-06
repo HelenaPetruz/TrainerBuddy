@@ -16,7 +16,7 @@ namespace view
     {
         //private TrainnerBuddy2 frm;
 
-        private readonly PessoaControl _pessoaControl;
+        private  PessoaControl _pessoaControl;
 
         public TrainnerBuddy1()
         {
@@ -81,8 +81,8 @@ namespace view
 
         private void btnEntrar1_Click(object sender, EventArgs e)
         {
-
-            string teste = _pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text);
+            string teste = " ";
+           
 
             if (_pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text).Equals( "SUCESSO"))
             {
@@ -92,7 +92,8 @@ namespace view
             }
             else
             {
-                MessageBox.Show("Email ou senha incorretos" + Convert.ToString(teste), "Aviso do sistema",  MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                teste = _pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text);
+                MessageBox.Show("Email ou senha incorretos" + "\n Erro:" + Convert.ToString(teste), "Aviso do sistema",  MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             }
         }

@@ -11,6 +11,10 @@ namespace Model
 {
   public class PessoaRepository
     {
+        public PessoaRepository()
+        {
+        }
+
         public string Insert (Pessoa pessoa)
         {
            string resp="";
@@ -220,6 +224,43 @@ namespace Model
                     Connection.SqlCon.Close();
             }
             return resp;
+        }
+
+        public string Cadastro(string pEmail, string pSenha, string Repita)
+        {
+            string resp = "";
+            if (pSenha == Repita)
+            {
+
+                try
+                {
+                    Connection.getConnection();
+                    MySqlCommand SqlCmd = new MySqlCommand
+                    {
+                        Connection = Connection.SqlCon,
+                        CommandText = "INSERT INTO pessoa (email,senha,id_plano,id_perfil) VALUES (@pEmail,@pSenha,1,2)",
+                        CommandType = CommandType.Text
+                    };
+                    SqlCmd.Parameters.AddWithValue("pEmail", pEmail);
+                    SqlCmd.Parameters.AddWithValue("pSenha", pSenha);
+                    resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
+                }
+                catch (Exception ex)
+                {
+                    resp = ex.Message;
+                }
+                finally
+                {
+                    if (Connection.SqlCon.State == ConnectionState.Open)
+                        Connection.SqlCon.Close();
+                }
+            }
+            else
+            {
+                resp = "FALHA";
+            }
+            return resp;
+
         }
 
     }

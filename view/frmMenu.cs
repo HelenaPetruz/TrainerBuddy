@@ -64,7 +64,14 @@ namespace view
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialog = new DialogResult();
+
+            dialog = MessageBox.Show("Quer mesmo sair?", "Alert!", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.Yes)
+            {
+                System.Windows.Forms.Application.Exit();
+            }
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
