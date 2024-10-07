@@ -62,7 +62,8 @@ namespace Model
                 SqlCmd.Parameters.AddWithValue("pNome_usuario", pessoa.nome_usuario);
                 SqlCmd.Parameters.AddWithValue("pCpf", pessoa.cpf);
                 SqlCmd.Parameters.AddWithValue("pEmail", pessoa.email);
-                
+                SqlCmd.Parameters.AddWithValue("@pIdpessoa", pessoa.idpessoa);
+
 
                 resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
             }

@@ -153,7 +153,6 @@ namespace view
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             Pessoa pessoa = new Pessoa();
-           
             int id;
             string id1;
             DialogResult dialog = new DialogResult();
@@ -168,25 +167,33 @@ namespace view
                 pessoa.nome_usuario = dgUsuarios.CurrentRow.Cells[1].Value.ToString();
                 pessoa.cpf = dgUsuarios.CurrentRow.Cells[2].Value.ToString();
                 pessoa.email = dgUsuarios.CurrentRow.Cells[3].Value.ToString();
-                if (_pessoaControl.Update(pessoa.idpessoa, pessoa.nome_usuario, pessoa.cpf, pessoa.email).Equals("SUCESSO"))
+
+                string resultado = _pessoaControl.Update(pessoa.idpessoa, pessoa.nome_usuario, pessoa.cpf, pessoa.email);
+                if (resultado.Equals("SUCESSO"))
                 {
                     MessageBox.Show("Usuario atualizado com sucesso");
-                    dgUsuarios.Refresh();
+                 // Recarrega os dados no DataGridView
                 }
                 else
                 {
-                    MessageBox.Show("Falha ao atualizar o usuario \n " + _pessoaControl.Update(pessoa.idpessoa, pessoa.nome_usuario, pessoa.cpf, pessoa.email));
-                    dgUsuarios.Refresh();
+                    MessageBox.Show("Falha ao atualizar o usuario \n " + resultado);
                 }
-
             }
-            else {
+            else
+            {
                 MessageBox.Show("Falha ao atualizar o usuario FALHA NA AUTENTICACAO");
-                dgUsuarios.Refresh();
-
             }
-
-
+        }
+        private void dgUsuarios_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow linha = dgUsuarios.Rows[e.RowIndex];
+            Pessoa pessoa = new Pessoa();
+            string id1;
+           id1 = linha.Cells[0].Value.ToString();
+           pessoa.idpessoa = System.Convert.ToInt32(id1);
+           pessoa.nome_usuario = dgUsuarios.CurrentRow.Cells[1].Value.ToString();
+           pessoa.cpf = dgUsuarios.CurrentRow.Cells[2].Value.ToString();
+           pessoa.email = dgUsuarios.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }
