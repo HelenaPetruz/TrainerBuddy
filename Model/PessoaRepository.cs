@@ -262,5 +262,84 @@ namespace Model
 
         }
 
+        public DataTable getUsuáriosAtivos()
+        {
+            DataTable DtResultado = new DataTable("pessoa");
+            try
+            {
+                Connection.getConnection();
+                String sqlSelect = "SELECT * from pessoa WHERE id_perfil = 1 OR id_perfil = 3";
+                MySqlCommand SqlCmd = new MySqlCommand();
+                SqlCmd.Connection = Connection.SqlCon;
+                SqlCmd.CommandText = sqlSelect;
+                SqlCmd.CommandType = CommandType.Text;
+                MySqlDataAdapter SqlData = new MySqlDataAdapter(SqlCmd);
+                SqlData.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
+        public string Desativar(int idpessoa)
+        {
+            string resp = "";
+            try
+            {
+                Connection.getConnection();
+                string updateSql = String.Format("UPDATE pessoa SET" + " id_perfil = 3 " + " WHERE idpessoa = @pIdpessoa");
+                MySqlCommand SqlCmd = new MySqlCommand(updateSql, Connection.SqlCon);
+
+
+               
+                SqlCmd.Parameters.AddWithValue("@pIdpessoa",idpessoa);
+
+
+                resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
+            }
+            catch (Exception ex)
+            {
+                resp = ex.Message;
+            }
+            finally
+            {
+                if (Connection.SqlCon.State == ConnectionState.Open)
+                    Connection.SqlCon.Close();
+            }
+            return resp;
+
+        }
+
+        public string Reativar(int idpessoa)
+        {
+            string resp = "";
+            try
+            {
+                Connection.getConnection();
+                string updateSql = String.Format("UPDATE pessoa SET" + " id_perfil = 1 " + " WHERE idpessoa = @pIdpessoa");
+                MySqlCommand SqlCmd = new MySqlCommand(updateSql, Connection.SqlCon);
+
+
+
+                SqlCmd.Parameters.AddWithValue("@pIdpessoa", idpessoa);
+
+
+                resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
+            }
+            catch (Exception ex)
+            {
+                resp = ex.Message;
+            }
+            finally
+            {
+                if (Connection.SqlCon.State == ConnectionState.Open)
+                    Connection.SqlCon.Close();
+            }
+            return resp;
+
+        }
+
     }
 }

@@ -70,5 +70,23 @@ namespace Control
             return _pessoaRepository.Cadastro(email, senha, Repita);
 
         }
+
+        public DataTable getUsuáriosAtivos()
+        {
+            return _pessoaRepository.getUsuáriosAtivos();
+        }
+
+        public string Desativar(int idpessoa)
+        {
+            
+            return _pessoaRepository.Desativar(idpessoa);
+        }
+
+        public string Reativar(int idpessoa)
+        {
+            return _pessoaRepository.Reativar(idpessoa);
+        }
+
+
     }
 }
