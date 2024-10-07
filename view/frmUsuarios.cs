@@ -267,7 +267,13 @@ namespace view
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+           
+                string nome = txtBuscar.Text;
+                dgUsuarios.DataSource = _pessoaControl.filterByName(nome);
+                dgUsuarios.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dgUsuarios_RowPrePaint);
+                dgUsuarios.Refresh();
+            
+           
         }
 
         private void button3_Click(object sender, EventArgs e)

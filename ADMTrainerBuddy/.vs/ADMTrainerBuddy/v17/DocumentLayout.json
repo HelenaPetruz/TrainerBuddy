@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "E:\\2024\\PI\\tccTrainerBuddy\\ADMTrainerBuddy\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|e:\\2024\\pi\\tcctrainerbuddy\\model\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|e:\\2024\\pi\\tcctrainerbuddy\\view\\frmusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -12,19 +15,16 @@
       "AbsoluteMoniker": "D:0:0:{87AE215C-1451-4EDD-8936-3ADF0F79BCA5}|..\\Control\\Control.csproj|e:\\2024\\pi\\tcctrainerbuddy\\control\\pessoacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|e:\\2024\\pi\\tcctrainerbuddy\\model\\pessoarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|e:\\2024\\pi\\tcctrainerbuddy\\model\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|e:\\2024\\pi\\tcctrainerbuddy\\view\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|e:\\2024\\pi\\tcctrainerbuddy\\view\\formteste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|e:\\2024\\pi\\tcctrainerbuddy\\view\\formteste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|e:\\2024\\pi\\tcctrainerbuddy\\model\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|e:\\2024\\pi\\tcctrainerbuddy\\view\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|e:\\2024\\pi\\tcctrainerbuddy\\view\\frmplanos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -64,94 +64,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PessoaControl.cs",
-              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\Control\\PessoaControl.cs",
-              "RelativeDocumentMoniker": "..\\Control\\PessoaControl.cs",
-              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\Control\\PessoaControl.cs",
-              "RelativeToolTip": "..\\Control\\PessoaControl.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAuwFUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T18:48:33.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PessoaRepository.cs",
-              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\PessoaRepository.cs",
-              "RelativeDocumentMoniker": "..\\Model\\PessoaRepository.cs",
-              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\PessoaRepository.cs",
-              "RelativeToolTip": "..\\Model\\PessoaRepository.cs",
-              "ViewState": "AgIAADYBAAAAAAAAAAAkwEABAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T18:34:58.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "frmUsuarios.cs [Design]",
               "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmUsuarios.cs",
               "RelativeDocumentMoniker": "..\\view\\frmUsuarios.cs",
-              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmUsuarios.cs [Design]*",
-              "RelativeToolTip": "..\\view\\frmUsuarios.cs [Design]*",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmUsuarios.cs [Design]",
+              "RelativeToolTip": "..\\view\\frmUsuarios.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-04T18:34:52.549Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "frmUsuarios.cs",
               "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmUsuarios.cs",
               "RelativeDocumentMoniker": "..\\view\\frmUsuarios.cs",
-              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmUsuarios.cs*",
-              "RelativeToolTip": "..\\view\\frmUsuarios.cs*",
-              "ViewState": "AgIAABoBAAAAAAAAAAAkwDYBAAAmAAAAAAAAAA==",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmUsuarios.cs",
+              "RelativeToolTip": "..\\view\\frmUsuarios.cs",
+              "ViewState": "AgIAAAgBAAAAAAAAAAAAABIBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-06T12:58:47.4Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Pessoa.cs",
-              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\Pessoa.cs",
-              "RelativeDocumentMoniker": "..\\Model\\Pessoa.cs",
-              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\Pessoa.cs",
-              "RelativeToolTip": "..\\Model\\Pessoa.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T14:09:13.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmPlanos.cs",
-              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs",
-              "RelativeDocumentMoniker": "..\\view\\frmPlanos.cs",
-              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs",
-              "RelativeToolTip": "..\\view\\frmPlanos.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAWwEsAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T12:58:10.765Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmPlanos.cs [Design]",
-              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs",
-              "RelativeDocumentMoniker": "..\\view\\frmPlanos.cs",
-              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs [Design]",
-              "RelativeToolTip": "..\\view\\frmPlanos.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T18:34:51.673Z"
             },
             {
               "$type": "Document",
@@ -163,11 +101,12 @@
               "RelativeToolTip": "..\\view\\frmMenu.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAIAzwEkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T12:57:30.335Z"
+              "WhenOpened": "2024-10-06T12:57:30.335Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "formteste.cs [Design]",
               "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\formTEste.cs",
               "RelativeDocumentMoniker": "..\\view\\formTEste.cs",
@@ -179,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "formteste.cs",
               "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\formTEste.cs",
               "RelativeDocumentMoniker": "..\\view\\formTEste.cs",
@@ -200,19 +139,85 @@
               "RelativeToolTip": "..\\view\\frmCaixa.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAMwCEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T12:56:46.109Z"
+              "WhenOpened": "2024-10-06T12:56:46.109Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "Form1.cs",
               "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\Form1.cs",
               "RelativeDocumentMoniker": "..\\view\\Form1.cs",
               "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\Form1.cs",
               "RelativeToolTip": "..\\view\\Form1.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAowFYAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAcwCsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T18:46:46.816Z"
+              "WhenOpened": "2024-10-04T18:46:46.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PessoaControl.cs",
+              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\Control\\PessoaControl.cs",
+              "RelativeDocumentMoniker": "..\\Control\\PessoaControl.cs",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\Control\\PessoaControl.cs",
+              "RelativeToolTip": "..\\Control\\PessoaControl.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAmwDYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T18:48:33.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PessoaRepository.cs",
+              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\PessoaRepository.cs",
+              "RelativeDocumentMoniker": "..\\Model\\PessoaRepository.cs",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\PessoaRepository.cs*",
+              "RelativeToolTip": "..\\Model\\PessoaRepository.cs*",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAIwJEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T18:34:58.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Pessoa.cs",
+              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\Pessoa.cs",
+              "RelativeDocumentMoniker": "..\\Model\\Pessoa.cs",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\Pessoa.cs",
+              "RelativeToolTip": "..\\Model\\Pessoa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T14:09:13.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmPlanos.cs [Design]",
+              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs",
+              "RelativeDocumentMoniker": "..\\view\\frmPlanos.cs",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs [Design]",
+              "RelativeToolTip": "..\\view\\frmPlanos.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T18:34:51.673Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmPlanos.cs",
+              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs",
+              "RelativeDocumentMoniker": "..\\view\\frmPlanos.cs",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs",
+              "RelativeToolTip": "..\\view\\frmPlanos.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAWwEsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T12:58:10.765Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -223,7 +228,8 @@
               "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmMenu.cs [Design]",
               "RelativeToolTip": "..\\view\\frmMenu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T18:34:49.739Z"
+              "WhenOpened": "2024-10-04T18:34:49.739Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -234,7 +240,8 @@
               "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmCaixa.cs [Design]",
               "RelativeToolTip": "..\\view\\frmCaixa.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T18:34:48.459Z"
+              "WhenOpened": "2024-10-04T18:34:48.459Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -245,7 +252,8 @@
               "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\Form1.cs [Design]",
               "RelativeToolTip": "..\\view\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T18:34:40.81Z"
+              "WhenOpened": "2024-10-04T18:34:40.81Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -282,7 +290,8 @@
               "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\Form2.cs [Design]",
               "RelativeToolTip": "..\\view\\Form2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T18:34:43.029Z"
+              "WhenOpened": "2024-10-04T18:34:43.029Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

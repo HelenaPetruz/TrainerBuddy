@@ -36,6 +36,8 @@ E:\2024\PI\tccTrainerBuddy\view\bin\Debug\System.IO.Pipelines.xml
 E:\2024\PI\tccTrainerBuddy\view\bin\Debug\K4os.Hash.xxHash.xml
 E:\2024\PI\tccTrainerBuddy\view\bin\Debug\System.Numerics.Vectors.xml
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.AssemblyReference.cache
+E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.SuggestedBindingRedirects.cache
+E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.exe.config
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.TrainnerBuddy1.resources
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.SplashScreen.resources
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.FormTEste.resources
@@ -46,8 +48,6 @@ E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.TrainnerBuddy4.resources
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.Properties.Resources.resources
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.GenerateResource.cache
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.CoreCompileInputs.cache
+E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.Up2Date
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.exe
 E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.pdb
-E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.Up2Date
-E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.SuggestedBindingRedirects.cache
-E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.exe.config

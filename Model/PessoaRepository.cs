@@ -143,7 +143,7 @@ namespace Model
                 }
                 else
                 {
-                    selectSql = String.Format("SELECT * FROM pessoa");
+                     selectSql = "SELECT * from pessoa WHERE id_perfil = 1 OR id_perfil = 3";
                 }
                 MySqlCommand SqlCmd = new MySqlCommand(selectSql, Connection.SqlCon);
                 if (!string.IsNullOrEmpty(pNome_usuario))
