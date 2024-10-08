@@ -12,9 +12,9 @@ namespace Control
     {
         private PlanoRepository _planoRepository;
 
-        public PlanoControl(PlanoRepository planoRepository)
+        public PlanoControl()
         {
-            _planoRepository = planoRepository;
+            _planoRepository = new PlanoRepository();
         }
 
         public string Update(string nome_plano, double valor)
