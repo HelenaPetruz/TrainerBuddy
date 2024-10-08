@@ -94,6 +94,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="Faturamento.cs" />
+    <Compile Include="FaturamentoRepository.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="PessoaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FaturamentoControl.cs" />
     <Compile Include="PessoaControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
