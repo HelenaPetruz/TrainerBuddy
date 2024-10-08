@@ -98,6 +98,8 @@
     <Compile Include="FaturamentoRepository.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="PessoaRepository.cs" />
+    <Compile Include="Plano.cs" />
+    <Compile Include="PlanoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="FaturamentoControl.cs" />
     <Compile Include="PessoaControl.cs" />
+    <Compile Include="PlanoControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
