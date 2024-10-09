@@ -93,6 +93,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cond_pagamento.cs" />
+    <Compile Include="Cond_pagamentoRepository.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Faturamento.cs" />
     <Compile Include="FaturamentoRepository.cs" />
