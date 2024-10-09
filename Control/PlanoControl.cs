@@ -17,10 +17,11 @@ namespace Control
             _planoRepository = new PlanoRepository();
         }
 
-        public string Update(string nome_plano, double valor)
+        public string Update(int id, string nome_plano, double valor)
         {
             var plano = new Plano
             {
+                id_plano = id,
                 nome_plano = nome_plano,
                 valor = valor
             };

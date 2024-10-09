@@ -114,5 +114,36 @@ namespace view
         {
             this.Close();
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            dgPlanos.ReadOnly = false;
+            dgPlanos.AllowUserToAddRows = false;
+            this.dgPlanos.EditMode = DataGridViewEditMode.EditOnEnter;
+            lblAlterar.Visible = true;
+        }
+
+        private void dgPlanos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            dgPlanos.ReadOnly = false;
+            dgPlanos.AllowUserToAddRows = false;
+            this.dgPlanos.EditMode = DataGridViewEditMode.EditOnEnter;
+
+            int rowIndex = e.RowIndex;
+            //int columnIndex = e.ColumnIndex;
+            string nome = dgPlanos.Rows[rowIndex].Cells[1].Value.ToString();
+            double valor = Convert.ToDouble(dgPlanos.Rows[rowIndex].Cells[2].Value);
+            int id = Convert.ToInt32(dgPlanos.Rows[rowIndex].Cells[0].Value);
+
+            DialogResult resultado = MessageBox.Show("Você deseja realmente alterar esse plano?", "Confirmação de alteração", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                planoControl.Update(id, nome, valor);
+            }
+            else
+            {
+                carregaGridView();
+            }            
+        }
     }
 }
