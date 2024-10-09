@@ -127,6 +127,7 @@ namespace view
         {
             dgPlanos.ReadOnly = false;
             dgPlanos.AllowUserToAddRows = false;
+            dgPlanos.Columns[0].ReadOnly = true;
             this.dgPlanos.EditMode = DataGridViewEditMode.EditOnEnter;
 
             int rowIndex = e.RowIndex;
@@ -144,6 +145,14 @@ namespace view
             {
                 carregaGridView();
             }            
+        }
+
+        private void dgPlanos_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

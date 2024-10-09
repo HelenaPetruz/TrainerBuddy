@@ -30,7 +30,7 @@ namespace view
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCabecalho1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -45,11 +45,11 @@ namespace view
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblAlterar = new System.Windows.Forms.Label();
             this.dgPlanos = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.lblAlterar = new System.Windows.Forms.Label();
             this.panelCabecalho1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -259,16 +259,29 @@ namespace view
             this.panel3.Size = new System.Drawing.Size(575, 409);
             this.panel3.TabIndex = 2;
             // 
+            // lblAlterar
+            // 
+            this.lblAlterar.AutoSize = true;
+            this.lblAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlterar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAlterar.Location = new System.Drawing.Point(7, 49);
+            this.lblAlterar.Name = "lblAlterar";
+            this.lblAlterar.Size = new System.Drawing.Size(547, 18);
+            this.lblAlterar.TabIndex = 4;
+            this.lblAlterar.Text = "Para alterar os dados de um plano clique duas vezes sobre ele e altere!";
+            this.lblAlterar.Visible = false;
+            // 
             // dgPlanos
             // 
             this.dgPlanos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPlanos.Location = new System.Drawing.Point(22, 69);
-            this.dgPlanos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgPlanos.Margin = new System.Windows.Forms.Padding(2);
             this.dgPlanos.Name = "dgPlanos";
             this.dgPlanos.RowHeadersWidth = 51;
             this.dgPlanos.RowTemplate.Height = 24;
             this.dgPlanos.Size = new System.Drawing.Size(526, 308);
             this.dgPlanos.TabIndex = 2;
+            this.dgPlanos.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgPlanos_CellBeginEdit);
             this.dgPlanos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPlanos_CellValueChanged);
             // 
             // label2
@@ -289,29 +302,17 @@ namespace view
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgUsuarios.Location = new System.Drawing.Point(6, 40);
             this.dgUsuarios.Name = "dgUsuarios";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgUsuarios.RowHeadersWidth = 51;
             this.dgUsuarios.Size = new System.Drawing.Size(557, 357);
             this.dgUsuarios.TabIndex = 0;
-            // 
-            // lblAlterar
-            // 
-            this.lblAlterar.AutoSize = true;
-            this.lblAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlterar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblAlterar.Location = new System.Drawing.Point(7, 49);
-            this.lblAlterar.Name = "lblAlterar";
-            this.lblAlterar.Size = new System.Drawing.Size(547, 18);
-            this.lblAlterar.TabIndex = 4;
-            this.lblAlterar.Text = "Para alterar os dados de um plano clique duas vezes sobre ele e altere!";
-            this.lblAlterar.Visible = false;
             // 
             // frmPlanos
             // 
