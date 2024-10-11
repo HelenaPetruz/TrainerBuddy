@@ -129,7 +129,7 @@ namespace Model
             try
             {
                 Connection.getConnection();
-                String sqlSelect = "select valor from Plano where id_plano=@pId_plano"; ;
+                String sqlSelect = "select valor from plano where id_plano=@pId_plano"; ;
 
                 MySqlCommand SqlCmd = new MySqlCommand(sqlSelect, Connection.SqlCon);
                 SqlCmd.Parameters.AddWithValue("@pId_plano", id_plano);
@@ -155,7 +155,41 @@ namespace Model
             }
 
             return resp;
-
         }
+
+        public String getNomePlano(int id_plano)
+        {
+            string resp = "";
+            try
+            {
+                Connection.getConnection();
+                String sqlSelect = "select nome_plano from plano where id_plano=@pId_plano"; ;
+
+                MySqlCommand SqlCmd = new MySqlCommand(sqlSelect, Connection.SqlCon);
+                SqlCmd.Parameters.AddWithValue("@pId_plano", id_plano);
+                object result = SqlCmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    resp = result.ToString();
+                }
+                else
+                {
+                    resp = "Valor não encontrado";
+                }
+            }
+            catch (Exception ex)
+            {
+                resp = ex.Message;
+            }
+            finally
+            {
+                if (Connection.SqlCon.State == ConnectionState.Open)
+                    Connection.SqlCon.Close();
+            }
+
+            return resp;
+        }
+
     }
 }

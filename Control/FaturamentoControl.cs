@@ -50,5 +50,10 @@ namespace Control
         {
             return _faturamentoRepository.getPrice(id_plano);
         }
+
+        public string getNomePlano (int id_plano)
+        {
+            return _faturamentoRepository.getNomePlano(id_plano);
+        }
     }
 }
