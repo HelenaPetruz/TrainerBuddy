@@ -25,8 +25,10 @@ namespace view
             dgCaixa.Columns.Add("id_faturamento", "ID");
             dgCaixa.Columns.Add("id_Usuario", "ID DO USUÁRIO");
             dgCaixa.Columns.Add("id_Plano", "ID DO PLANO");
+            dgCaixa.Columns.Add("valor", "PREÇO DO PLANO");
             dgCaixa.Columns.Add("vencimento", "DATA DE VENCIMENTO DO PAGAMENTO");
             dgCaixa.Columns.Add("data_compra", "DATA DA COMPRA");
+            dgCaixa.Columns.Add("total", "TOTAL");
 
             dgCaixa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgCaixa.AllowUserToAddRows = false;
@@ -54,13 +56,19 @@ namespace view
             dgCaixa.Columns[2].HeaderText = "ID DO PLANO";
             dgCaixa.Columns[2].DataPropertyName = "id_Plano";
 
-            dgCaixa.Columns[3].Width = 270;
-            dgCaixa.Columns[3].HeaderText = "DATA DE VENCIMENTO DO PAGAMENTO";
-            dgCaixa.Columns[3].DataPropertyName = "vencimento";
+            dgCaixa.Columns.Add("valor", "PREÇO DO PLANO");
+            dgCaixa.Columns[3].Width = 100;
 
             dgCaixa.Columns[4].Width = 270;
-            dgCaixa.Columns[4].HeaderText = "DATA DA COMPRA";
-            dgCaixa.Columns[4].DataPropertyName = "data_compra";
+            dgCaixa.Columns[4].HeaderText = "DATA DE VENCIMENTO DO PAGAMENTO";
+            dgCaixa.Columns[4].DataPropertyName = "vencimento";
+
+            dgCaixa.Columns[5].Width = 150;
+            dgCaixa.Columns[5].HeaderText = "DATA DA COMPRA";
+            dgCaixa.Columns[5].DataPropertyName = "data_compra";
+
+            dgCaixa.Columns.Add("total", "TOTAL");
+            dgCaixa.Columns[6].Width = 100;
 
             dgCaixa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgCaixa.AllowUserToAddRows = false;
@@ -73,6 +81,21 @@ namespace view
         private void carregarGridView()
         {
             dgCaixa.DataSource = caixaControl.getAll();
+
+            int cont;
+
+            for (cont = 0; cont < dgCaixa.Rows.Count; cont++)
+            {
+                object valorCell = dgCaixa.Rows[cont].Cells[2].Value;
+                int id_plano = Convert.ToInt32(valorCell);
+                dgCaixa.Rows[cont].Cells[3].Value = caixaControl.getPrice(id_plano);
+            }
+
+            for (cont = 0; cont < dgCaixa.Rows.Count; cont++)
+            {
+                dgCaixa.Rows[cont].Cells[5].Value = "total ";
+            }
+
             dgCaixa.Refresh();
         }
 
