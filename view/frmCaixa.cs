@@ -180,5 +180,15 @@ namespace view
         {
             this.Close();
         }
+
+        private void btnCaixa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
