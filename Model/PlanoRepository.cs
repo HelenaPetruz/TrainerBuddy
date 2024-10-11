@@ -123,7 +123,7 @@ namespace Model
                 Connection.getConnection();
                 if (!string.IsNullOrEmpty(pNome_plano))
                 {
-                    selectSql = String.Format("SELECT * FROM plano WHERE nome_plano LIKE @pNome_plano")
+                    selectSql = String.Format("SELECT * FROM plano WHERE nome_plano LIKE @pNome_plano");
                     pNome_plano = '%' + pNome_plano + '%';
                 }
                 else

@@ -48,11 +48,13 @@ namespace view
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            this.dgCaixa = new System.Windows.Forms.DataGridView();
             this.panelCabecalho1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCaixa)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCabecalho1
@@ -283,6 +285,7 @@ namespace view
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.dgCaixa);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.dgUsuarios);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -320,6 +323,14 @@ namespace view
             this.dgUsuarios.Size = new System.Drawing.Size(557, 357);
             this.dgUsuarios.TabIndex = 0;
             // 
+            // dgCaixa
+            // 
+            this.dgCaixa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCaixa.Location = new System.Drawing.Point(10, 49);
+            this.dgCaixa.Name = "dgCaixa";
+            this.dgCaixa.Size = new System.Drawing.Size(553, 230);
+            this.dgCaixa.TabIndex = 2;
+            // 
             // frmCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +353,7 @@ namespace view
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCaixa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,6 +378,7 @@ namespace view
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgUsuarios;
+        private System.Windows.Forms.DataGridView dgCaixa;
     }
 }
 
