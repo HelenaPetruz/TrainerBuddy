@@ -20,6 +20,9 @@ namespace view
         public frmCaixa()
         {
             InitializeComponent();
+
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+
             caixaControl = new FaturamentoControl();
 
             dgCaixa.Columns.Add("id_faturamento", "ID");
@@ -49,27 +52,27 @@ namespace view
             dgCaixa.Columns[0].DataPropertyName = "id_faturamento";
             dgCaixa.Columns[0].ValueType = typeof(int);
 
-            dgCaixa.Columns[1].Width = 60;
+            dgCaixa.Columns[1].Width = 100;
             dgCaixa.Columns[1].HeaderText = "ID DO USUÁRIO";
             dgCaixa.Columns[1].DataPropertyName = "id_Usuario";
             dgCaixa.Columns[1].ValueType = typeof(int);
 
             /* dgCaixa.Columns.Add("nome_plano", "NOME DO PLANO");
              dgCaixa.Columns[2].Width = 60;*/
-            dgCaixa.Columns[2].Width = 60;
+            dgCaixa.Columns[2].Width = 80;
             dgCaixa.Columns[2].HeaderText = "ID DO PLANO";
             dgCaixa.Columns[2].DataPropertyName = "id_Plano";
             dgCaixa.Columns[2].ValueType = typeof(int);
 
             dgCaixa.Columns.Add("valor", "PREÇO DO PLANO");
-            dgCaixa.Columns[3].Width = 80;
+            dgCaixa.Columns[3].Width = 120;
 
-            dgCaixa.Columns[4].Width = 100;
+            dgCaixa.Columns[4].Width = 180;
             dgCaixa.Columns[4].HeaderText = "VENCIMENTO DO PAGAMENTO";
             dgCaixa.Columns[4].DataPropertyName = "vencimento";
             dgCaixa.Columns[4].ValueType = typeof(DateTime);
 
-            dgCaixa.Columns[5].Width = 100;
+            dgCaixa.Columns[5].Width = 110;
             dgCaixa.Columns[5].HeaderText = "DATA DA COMPRA";
             dgCaixa.Columns[5].DataPropertyName = "data_compra";
             dgCaixa.Columns[5].ValueType = typeof(DateTime);
@@ -111,14 +114,14 @@ namespace view
             for (cont = 0; cont < dgCaixa.Rows.Count; cont++)
             {
                 object valorCell = dgCaixa.Rows[cont].Cells[3].Value;
-                if (cont ==1 || cont ==0)
+                if (cont == 1 || cont == 0)
                 {
                     dgCaixa.Rows[cont].Cells[6].Value = valorCell;
                 }
                 else
                 {
                     double preco = Convert.ToDouble(valorCell);
-                    object totalAnterior = dgCaixa.Rows[cont-1].Cells[6].Value;
+                    object totalAnterior = dgCaixa.Rows[cont - 1].Cells[6].Value;
                     double saldoAnterior = Convert.ToDouble(totalAnterior);
                     double total = saldoAnterior + preco;
                     dgCaixa.Rows[cont].Cells[6].Value = total;
@@ -131,7 +134,7 @@ namespace view
         private void dgCaixa_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             MessageBox.Show("Ocorreu um erro ao exibir os dados: " + e.Exception.Message, "Erro de Dados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            e.ThrowException = false; 
+            e.ThrowException = false;
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -188,7 +191,76 @@ namespace view
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            frmGrafico frm = new frmGrafico();
+            this.Close();
+            frm.Show();
         }
+        Bitmap bitmap;
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            // Defina o documento a ser impresso
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            int alturaLinha = 0;
+            int alturaPagina = e.MarginBounds.Top;
+            int margemEsquerda = e.MarginBounds.Left;
+            int margemDireita = e.MarginBounds.Right;
+            bool maisPaginas = false;
+
+            Pen canetaBorda = new Pen(Color.Black); // Para desenhar as bordas
+
+            // Desenhar cabeçalho do DataGridView
+            foreach (DataGridViewColumn coluna in dgCaixa.Columns)
+            {
+                // Desenhar texto do cabeçalho
+                e.Graphics.DrawString(coluna.HeaderText, dgCaixa.Font, Brushes.Black, margemEsquerda, alturaPagina);
+
+                // Desenhar borda em torno do cabeçalho
+                e.Graphics.DrawRectangle(canetaBorda, new Rectangle(margemEsquerda, alturaPagina, coluna.Width, dgCaixa.ColumnHeadersHeight));
+
+                margemEsquerda += coluna.Width;
+            }
+
+            // Resetar a margem esquerda
+            margemEsquerda = e.MarginBounds.Left;
+            alturaPagina += dgCaixa.ColumnHeadersHeight;
+
+            // Desenhar as linhas do DataGridView
+            foreach (DataGridViewRow linha in dgCaixa.Rows)
+            {
+                alturaLinha = linha.Height;
+
+                // Verificar se a linha cabe na página
+                if (alturaPagina + alturaLinha >= e.MarginBounds.Bottom)
+                {
+                    maisPaginas = true;
+                    break;
+                }
+
+                foreach (DataGridViewCell celula in linha.Cells)
+                {
+                    // Desenhar o conteúdo da célula
+                    e.Graphics.DrawString(celula.Value?.ToString(), dgCaixa.Font, Brushes.Black, margemEsquerda, alturaPagina);
+
+                    // Desenhar a borda da célula
+                    e.Graphics.DrawRectangle(canetaBorda, new Rectangle(margemEsquerda, alturaPagina, dgCaixa.Columns[celula.ColumnIndex].Width, alturaLinha));
+
+                    margemEsquerda += dgCaixa.Columns[celula.ColumnIndex].Width;
+                }
+
+                // Resetar a margem esquerda para a próxima linha
+                margemEsquerda = e.MarginBounds.Left;
+                alturaPagina += alturaLinha;
+            }
+
+            // Se ainda houver mais linhas para imprimir
+            e.HasMorePages = maisPaginas;
+        }
+
     }
 }

@@ -151,3 +151,4 @@ C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\vie
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.csproj.CopyComplete
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.exe
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.pdb
+C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.frmGrafico.resources
