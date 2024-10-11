@@ -39,7 +39,6 @@ namespace view
 
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
             dgCaixa.ColumnCount = 5;

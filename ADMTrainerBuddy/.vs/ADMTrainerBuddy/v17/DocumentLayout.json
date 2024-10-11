@@ -6,6 +6,12 @@
       "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|c:\\users\\alessandra\\onedrive - universidade estadual de campinas\\tcc\\descktop adm\\view\\frmcaixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|c:\\users\\alessandra\\onedrive - universidade estadual de campinas\\tcc\\descktop adm\\model\\faturamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87AE215C-1451-4EDD-8936-3ADF0F79BCA5}|..\\Control\\Control.csproj|c:\\users\\alessandra\\onedrive - universidade estadual de campinas\\tcc\\descktop adm\\control\\faturamentocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|c:\\users\\alessandra\\onedrive - universidade estadual de campinas\\tcc\\descktop adm\\view\\frmcaixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -16,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -24,27 +30,54 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FaturamentoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Alessandra\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Model\\FaturamentoRepository.cs",
+              "RelativeDocumentMoniker": "..\\Model\\FaturamentoRepository.cs",
+              "ToolTip": "C:\\Users\\Alessandra\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Model\\FaturamentoRepository.cs",
+              "RelativeToolTip": "..\\Model\\FaturamentoRepository.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAUwIsAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T09:40:43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FaturamentoControl.cs",
+              "DocumentMoniker": "C:\\Users\\Alessandra\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Control\\FaturamentoControl.cs",
+              "RelativeDocumentMoniker": "..\\Control\\FaturamentoControl.cs",
+              "ToolTip": "C:\\Users\\Alessandra\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Control\\FaturamentoControl.cs",
+              "RelativeToolTip": "..\\Control\\FaturamentoControl.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAA9wDIAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T00:22:55.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "frmCaixa.cs",
               "DocumentMoniker": "C:\\Users\\Alessandra\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\view\\frmCaixa.cs",
               "RelativeDocumentMoniker": "..\\view\\frmCaixa.cs",
-              "ToolTip": "C:\\Users\\Alessandra\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\view\\frmCaixa.cs",
-              "RelativeToolTip": "..\\view\\frmCaixa.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAACcAAAAJAAAA",
+              "ToolTip": "C:\\Users\\Alessandra\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\view\\frmCaixa.cs*",
+              "RelativeToolTip": "..\\view\\frmCaixa.cs*",
+              "ViewState": "AQIAADYAAAAAAAAAAAAUwEEAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T23:56:12.914Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "frmCaixa.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Alessandra\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\view\\frmCaixa.cs",
               "RelativeDocumentMoniker": "..\\view\\frmCaixa.cs",
-              "ToolTip": "C:\\Users\\Alessandra\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\view\\frmCaixa.cs [Design]",
-              "RelativeToolTip": "..\\view\\frmCaixa.cs [Design]",
+              "ToolTip": "C:\\Users\\Alessandra\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\view\\frmCaixa.cs [Design]*",
+              "RelativeToolTip": "..\\view\\frmCaixa.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T23:25:47.538Z"
+              "WhenOpened": "2024-10-10T23:25:47.538Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
