@@ -191,5 +191,40 @@ namespace Model
             return resp;
         }
 
+
+        public Dictionary<int, double> ObterFaturamentoMensalPorAno(int ano)
+        {
+            Dictionary<int, double> faturamentoPorMes = new Dictionary<int, double>();
+            try
+            {
+                Connection.getConnection();
+                String sqlSelect = "SELECT MONTH(f.data_compra) AS mes, SUM(p.valor) AS totalMensal FROM Faturamento f JOIN Plano p ON f.id_Plano = p.id_Plano WHERE YEAR(f.data_compra) = @pAno GROUP BY MONTH (f.data_compra) ORDER BY MONTH (f.data_compra)";
+
+                MySqlCommand cmd = new MySqlCommand(sqlSelect, Connection.SqlCon);
+                cmd.Parameters.AddWithValue("@pAno", ano);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int mes = reader.GetInt32("mes");
+                    double valorTotal = reader.GetDouble("totalMensal");
+                    faturamentoPorMes[mes] = valorTotal;
+                }
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+               faturamentoPorMes = null;
+            }
+            finally
+            {
+                if (Connection.SqlCon.State == ConnectionState.Open)
+                    Connection.SqlCon.Close();
+            }
+
+            return faturamentoPorMes;
+        }
+
     }
 }

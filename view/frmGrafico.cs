@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace view
 {
@@ -26,7 +27,34 @@ namespace view
 
         private void frmGrafico_Load(object sender, EventArgs e)
         {
-           
+            chartFaturamento.Series.Clear();
+            Series seriesFaturamento = new Series("Faturamento");
+            seriesFaturamento.ChartType = SeriesChartType.Column;
+            chartFaturamento.Series.Add(seriesFaturamento);
+        }
+
+        private void ConfigurarGrafico()
+        {
+            chartFaturamento.Series.Clear();
+            chartFaturamento.Series.Add("Faturamento");
+            chartFaturamento.Series["Faturamento"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            chartFaturamento.Series["Faturamento"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            chartFaturamento.Series["Faturamento"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+
+            // Aqui é pra definir o eixo X e Y
+            chartFaturamento.ChartAreas[0].AxisX.Title = "Meses";
+            chartFaturamento.ChartAreas[0].AxisY.Title = "Faturamento Total";
+        }
+
+        private void PreencherGrafico(Dictionary<int, double> faturamentoMensal)
+        {
+            chartFaturamento.Series["Faturamento"].Points.Clear();
+            foreach (var mesFaturamento in faturamentoMensal)
+            {
+                int mes = mesFaturamento.Key;
+                double valorTotal = mesFaturamento.Value;
+                chartFaturamento.Series["Faturamento"].Points.AddXY(mes, valorTotal);
+            }
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -91,9 +119,31 @@ namespace view
 
         }
 
-        private void chart1_Click(object sender, EventArgs e)
+        private void btnFaturamentoMensal_Click(object sender, EventArgs e)
         {
+            lblAno.Visible = true;
+            txtAno.Visible = true;
+            btnGerarGrafico.Visible = true;
+        }
 
+        private void btnGerarGrafico_Click(object sender, EventArgs e)
+        {
+            lblAno.Visible = true;
+            txtAno.Visible = true;
+            btnGerarGrafico.Visible = true;
+
+            int ano = int.Parse(txtAno.Text);
+
+            Dictionary<int, double> faturamentoMensal = caixaControl.ObterFaturamentoMensalPorAno(ano);
+
+            if (faturamentoMensal != null && faturamentoMensal.Count > 0)
+            {
+                PreencherGrafico(faturamentoMensal);
+            }
+            else
+            {
+                MessageBox.Show("Nenhum dado encontrado para o ano selecionado.");
+            }
         }
     }
 }

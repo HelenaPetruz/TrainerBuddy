@@ -55,5 +55,10 @@ namespace Control
         {
             return _faturamentoRepository.getNomePlano(id_plano);
         }
+
+        public Dictionary<int, double> ObterFaturamentoMensalPorAno(int ano)
+        {
+            return _faturamentoRepository.ObterFaturamentoMensalPorAno(ano);
+        }
     }
 }
