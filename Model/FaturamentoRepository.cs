@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlTypes;
@@ -198,7 +199,7 @@ namespace Model
             try
             {
                 Connection.getConnection();
-                String sqlSelect = "SELECT MONTH(f.data_compra) AS mes, SUM(p.valor) AS totalMensal FROM Faturamento f JOIN Plano p ON f.id_Plano = p.id_Plano WHERE YEAR(f.data_compra) = @pAno GROUP BY MONTH (f.data_compra) ORDER BY MONTH (f.data_compra)";
+                String sqlSelect = "SELECT MONTH(f.data_compra) AS mes, SUM(p.valor) AS totalMensal FROM Faturamento f JOIN plano p ON f.id_Plano = p.id_plano WHERE YEAR(f.data_compra) = @pAno GROUP BY MONTH (f.data_compra) ORDER BY MONTH (f.data_compra)";
 
                 MySqlCommand cmd = new MySqlCommand(sqlSelect, Connection.SqlCon);
                 cmd.Parameters.AddWithValue("@pAno", ano);

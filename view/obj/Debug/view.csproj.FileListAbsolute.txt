@@ -152,3 +152,4 @@ C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\vie
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.exe
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.pdb
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.frmGrafico.resources
+E:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.frmGrafico.resources
