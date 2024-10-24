@@ -16,12 +16,11 @@ namespace view
     {
         //private TrainnerBuddy2 frm;
 
-        private readonly PessoaControl _pessoaControl;
+        private  PessoaControl _pessoaControl = new PessoaControl();
 
         public TrainnerBuddy1()
         {
 
-            _pessoaControl = new PessoaControl();
             //frm = new TrainnerBuddy2();
 
             Thread thread = new Thread(new ThreadStart(splashScreen));
@@ -81,13 +80,20 @@ namespace view
 
         private void btnEntrar1_Click(object sender, EventArgs e)
         {
-            DataTable pessoa;
-         pessoa = _pessoaControl.filterByEmail(txtUsuario1.Text);
+            string teste = " ";
+           
 
-          
+            if (_pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text).Equals("SUCESSO"))
+            {
                 TrainnerBuddy3 frm = new TrainnerBuddy3();
                 frm.Show();
                 this.Hide();
+            }
+            else
+            {
+                teste = _pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text);
+                MessageBox.Show("Email ou senha incorretos" + "\n Erro:" + Convert.ToString(teste), "Aviso do sistema",  MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
             }
         }
     }

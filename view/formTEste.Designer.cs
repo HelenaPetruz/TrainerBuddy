@@ -40,7 +40,7 @@ namespace view
             this.label11 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRepita = new System.Windows.Forms.TextBox();
             this.panelCabecalho1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,13 +180,13 @@ namespace view
             this.label1.TabIndex = 12;
             this.label1.Text = "Repita a senha";
             // 
-            // textBox1
+            // txtRepita
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(272, 280);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(267, 26);
-            this.textBox1.TabIndex = 11;
+            this.txtRepita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRepita.Location = new System.Drawing.Point(272, 280);
+            this.txtRepita.Name = "txtRepita";
+            this.txtRepita.Size = new System.Drawing.Size(267, 26);
+            this.txtRepita.TabIndex = 11;
             // 
             // TrainnerBuddy2
             // 
@@ -195,7 +195,7 @@ namespace view
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 481);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtRepita);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnEntrar1);
@@ -227,7 +227,7 @@ namespace view
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRepita;
     }
 }
 

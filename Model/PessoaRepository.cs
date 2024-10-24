@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Macs;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,6 +11,10 @@ namespace Model
 {
   public class PessoaRepository
     {
+        public PessoaRepository()
+        {
+        }
+
         public string Insert (Pessoa pessoa)
         {
            string resp="";
@@ -50,17 +55,16 @@ namespace Model
             try
             {
                 Connection.getConnection();
-                string updateSql = String.Format("UPDATE pessoa SET" +" nome_usuario = @pNome_usuario, cpf = @pCpf, email = @pEmail, senha = @pSenha, id_plano = @pId_plano, id_perfil = @pId_perfil"  + "WHERE idpessoa = @pIdpessoa");
+                string updateSql = String.Format("UPDATE pessoa SET" +" nome_usuario = @pNome_usuario, cpf = @pCpf, email = @pEmail"  + " WHERE idpessoa = @pIdpessoa");
                 MySqlCommand SqlCmd = new MySqlCommand(updateSql, Connection.SqlCon);
 
 
                 SqlCmd.Parameters.AddWithValue("pNome_usuario", pessoa.nome_usuario);
                 SqlCmd.Parameters.AddWithValue("pCpf", pessoa.cpf);
                 SqlCmd.Parameters.AddWithValue("pEmail", pessoa.email);
-                SqlCmd.Parameters.AddWithValue("pSenha", pessoa.senha);
-                SqlCmd.Parameters.AddWithValue("pId_plano", pessoa.id_plano);
-                SqlCmd.Parameters.AddWithValue("pId_perfil", pessoa.id_perfil);
-                SqlCmd.Parameters.AddWithValue("pIdpessoa", pessoa.idpessoa);
+                SqlCmd.Parameters.AddWithValue("@pIdpessoa", pessoa.idpessoa);
+
+
                 resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
             }
             catch (Exception ex)
@@ -139,7 +143,7 @@ namespace Model
                 }
                 else
                 {
-                    selectSql = String.Format("SELECT * FROM pessoa");
+                     selectSql = "SELECT * from pessoa WHERE id_perfil = 1 OR id_perfil = 3";
                 }
                 MySqlCommand SqlCmd = new MySqlCommand(selectSql, Connection.SqlCon);
                 if (!string.IsNullOrEmpty(pNome_usuario))
@@ -164,7 +168,7 @@ namespace Model
                 Connection.getConnection();
                 if (!string.IsNullOrEmpty(pEmail))
                 {
-                    selectSql = String.Format("SELECT * FROM pessoa WHERE nome_usuario LIKE @pEmail");
+                    selectSql = String.Format("SELECT * FROM pessoa WHERE email LIKE @pEmail");
                     pEmail = '%' + pEmail + '%';
                 }
                 else
@@ -182,6 +186,158 @@ namespace Model
                 DtResultado = null;
             }
             return DtResultado;
+
+        }
+
+
+        public string ValidaEntrada(string pEmail, string pSenha)
+        {
+            string selectSql;
+            string resp = "";
+
+            try
+            {
+                Connection.getConnection();
+                selectSql = "SELECT COUNT(*) FROM pessoa WHERE email = @pEmail AND senha = @pSenha";
+
+                MySqlCommand SqlCmd = new MySqlCommand(selectSql, Connection.SqlCon);
+
+                SqlCmd.Parameters.AddWithValue("@pEmail", pEmail);
+                SqlCmd.Parameters.AddWithValue("@pSenha", pSenha);
+
+             
+
+                int count = Convert.ToInt32(SqlCmd.ExecuteScalar());
+
+               
+
+                resp = count > 0 ? "SUCESSO" : "FALHA";
+            }
+            catch (Exception ex)
+            {
+                resp = "Erro: " + ex.Message;
+            }
+            finally
+            {
+                if (Connection.SqlCon.State == ConnectionState.Open)
+                    Connection.SqlCon.Close();
+            }
+            return resp;
+        }
+
+        public string Cadastro(string pEmail, string pSenha, string Repita)
+        {
+            string resp = "";
+            if (pSenha == Repita)
+            {
+
+                try
+                {
+                    Connection.getConnection();
+                    MySqlCommand SqlCmd = new MySqlCommand
+                    {
+                        Connection = Connection.SqlCon,
+                        CommandText = "INSERT INTO pessoa (email,senha,id_plano,id_perfil) VALUES (@pEmail,@pSenha,1,2)",
+                        CommandType = CommandType.Text
+                    };
+                    SqlCmd.Parameters.AddWithValue("pEmail", pEmail);
+                    SqlCmd.Parameters.AddWithValue("pSenha", pSenha);
+                    resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
+                }
+                catch (Exception ex)
+                {
+                    resp = ex.Message;
+                }
+                finally
+                {
+                    if (Connection.SqlCon.State == ConnectionState.Open)
+                        Connection.SqlCon.Close();
+                }
+            }
+            else
+            {
+                resp = "FALHA";
+            }
+            return resp;
+
+        }
+
+        public DataTable getUsuáriosAtivos()
+        {
+            DataTable DtResultado = new DataTable("pessoa");
+            try
+            {
+                Connection.getConnection();
+                String sqlSelect = "SELECT * from pessoa WHERE id_perfil = 1 OR id_perfil = 3";
+                MySqlCommand SqlCmd = new MySqlCommand();
+                SqlCmd.Connection = Connection.SqlCon;
+                SqlCmd.CommandText = sqlSelect;
+                SqlCmd.CommandType = CommandType.Text;
+                MySqlDataAdapter SqlData = new MySqlDataAdapter(SqlCmd);
+                SqlData.Fill(DtResultado);
+            }
+            catch (Exception ex)
+            {
+                DtResultado = null;
+            }
+            return DtResultado;
+        }
+
+        public string Desativar(int idpessoa)
+        {
+            string resp = "";
+            try
+            {
+                Connection.getConnection();
+                string updateSql = String.Format("UPDATE pessoa SET" + " id_perfil = 3 " + " WHERE idpessoa = @pIdpessoa");
+                MySqlCommand SqlCmd = new MySqlCommand(updateSql, Connection.SqlCon);
+
+
+               
+                SqlCmd.Parameters.AddWithValue("@pIdpessoa",idpessoa);
+
+
+                resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
+            }
+            catch (Exception ex)
+            {
+                resp = ex.Message;
+            }
+            finally
+            {
+                if (Connection.SqlCon.State == ConnectionState.Open)
+                    Connection.SqlCon.Close();
+            }
+            return resp;
+
+        }
+
+        public string Reativar(int idpessoa)
+        {
+            string resp = "";
+            try
+            {
+                Connection.getConnection();
+                string updateSql = String.Format("UPDATE pessoa SET" + " id_perfil = 1 " + " WHERE idpessoa = @pIdpessoa");
+                MySqlCommand SqlCmd = new MySqlCommand(updateSql, Connection.SqlCon);
+
+
+
+                SqlCmd.Parameters.AddWithValue("@pIdpessoa", idpessoa);
+
+
+                resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
+            }
+            catch (Exception ex)
+            {
+                resp = ex.Message;
+            }
+            finally
+            {
+                if (Connection.SqlCon.State == ConnectionState.Open)
+                    Connection.SqlCon.Close();
+            }
+            return resp;
 
         }
 

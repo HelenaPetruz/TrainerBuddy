@@ -8,7 +8,7 @@ using Model;
 
 namespace Control
 {
-     public class PessoaControl
+    public class PessoaControl
     {
         private PessoaRepository _pessoaRepository;
 
@@ -17,20 +17,16 @@ namespace Control
             _pessoaRepository = new PessoaRepository();
         }
 
-        public string Update(string nome_usuario, string cpf, string email, string senha, int id_plano, int id_perfil)
+        public string Update(int idpessoa, string nome_usuario, string cpf, string email)
         {
             var pessoa = new Pessoa
             {
                 nome_usuario = nome_usuario,
                 cpf = cpf,
                 email = email,
-                senha = senha,
-                id_plano = id_plano,
-                id_perfil = id_perfil,
-           
-
+                idpessoa = idpessoa,
             };
-                return _pessoaRepository.Update(pessoa);
+            return _pessoaRepository.Update(pessoa);
         }
 
         public string Insert(Pessoa pessoa)
@@ -63,6 +59,34 @@ namespace Control
         {
             return _pessoaRepository.FilterByEmail(email);
         }
+
+        public string ValidaEntrada(string email, string senha)
+        {
+            return _pessoaRepository.ValidaEntrada(email, senha);
+        }
+
+        public string Cadastro(string email, string senha, string Repita)
+        {
+            return _pessoaRepository.Cadastro(email, senha, Repita);
+
+        }
+
+        public DataTable getUsuáriosAtivos()
+        {
+            return _pessoaRepository.getUsuáriosAtivos();
+        }
+
+        public string Desativar(int idpessoa)
+        {
+            
+            return _pessoaRepository.Desativar(idpessoa);
+        }
+
+        public string Reativar(int idpessoa)
+        {
+            return _pessoaRepository.Reativar(idpessoa);
+        }
+
 
     }
 }

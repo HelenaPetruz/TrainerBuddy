@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +9,20 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace view
 {
     public partial class TrainnerBuddy2 : Form
     {
+
+
+        private readonly PessoaControl _pessoaControl;
         TrainnerBuddy1 frm;
         public TrainnerBuddy2()
         {
             frm = new TrainnerBuddy1(1);
-            
+            _pessoaControl = new PessoaControl();
             InitializeComponent();
       
         }
@@ -29,11 +34,22 @@ namespace view
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialog = new DialogResult();
+
+            dialog = MessageBox.Show("Quer mesmo sair?", "Alert!", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.Yes)
+            {
+                System.Windows.Forms.Application.Exit();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+
+
+
             this.WindowState = FormWindowState.Maximized;
        
         }
@@ -50,9 +66,17 @@ namespace view
 
         private void btnEntrar1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frm.Show();
-           
+          
+
+            if (_pessoaControl.Cadastro(txtUsuario1.Text, txtSenha1.Text, txtRepita.Text).Equals("SUCESSO"))
+            {
+                this.Close();
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Email ou senha inválidos ",  "Aviso do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
     }

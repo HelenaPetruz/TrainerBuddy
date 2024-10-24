@@ -2,6 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\ADMTrainerBuddy",
+    "\\Control",
+    "\\Model",
     "\\view"
   ],
   "SelectedNode": "\\view\\frmUsuarios.cs",
