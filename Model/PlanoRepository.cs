@@ -53,6 +53,15 @@ namespace Model
                 SqlCmd.Parameters.AddWithValue("pValor", plano.valor);
                 SqlCmd.Parameters.AddWithValue("pId_plano", plano.id_plano);
 
+                int linhaAlterada = SqlCmd.ExecuteNonQuery();
+                if (linhaAlterada > 0)
+                {
+                    resp = "Plano atualizado com sucesso!";
+                }
+                else
+                {
+                    resp = "Nenhum registro foi atualizado.";
+                }
             }
             catch (Exception ex)
             {
