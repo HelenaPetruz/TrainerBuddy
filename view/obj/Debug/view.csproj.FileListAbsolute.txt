@@ -140,3 +140,4 @@ D:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.CoreCompileInputs.cache
 D:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.CopyComplete
 D:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.exe
 D:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.pdb
+D:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.exe.config
