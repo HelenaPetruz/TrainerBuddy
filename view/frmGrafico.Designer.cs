@@ -334,7 +334,7 @@ namespace view
             // txtAno
             // 
             this.txtAno.Location = new System.Drawing.Point(226, 54);
-            this.txtAno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAno.Margin = new System.Windows.Forms.Padding(2);
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(128, 20);
             this.txtAno.TabIndex = 6;
@@ -345,8 +345,9 @@ namespace view
             chartArea1.Name = "ChartArea1";
             this.chartFaturamento.ChartAreas.Add(chartArea1);
             this.chartFaturamento.Location = new System.Drawing.Point(18, 97);
-            this.chartFaturamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chartFaturamento.Margin = new System.Windows.Forms.Padding(2);
             this.chartFaturamento.Name = "chartFaturamento";
+            this.chartFaturamento.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             this.chartFaturamento.Size = new System.Drawing.Size(571, 254);
             this.chartFaturamento.TabIndex = 5;
             this.chartFaturamento.Text = "chartFaturamento";

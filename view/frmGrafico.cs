@@ -44,6 +44,8 @@ namespace view
             // Aqui é pra definir o eixo X e Y
             chartFaturamento.ChartAreas[0].AxisX.Title = "Meses";
             chartFaturamento.ChartAreas[0].AxisY.Title = "Faturamento Total";
+
+          
         }
 
         private void PreencherGrafico(Dictionary<int, double> faturamentoMensal)
