@@ -242,7 +242,7 @@ namespace Model
                 while (reader.Read())
                 {
                     int idPlano = reader.GetInt32("id_plano");
-                    int totalPessoas = reader.GetInt32("totaPessoas");
+                    int totalPessoas = reader.GetInt32("totalPessoas");
                     planoMaisAdquirido[idPlano] = totalPessoas;
                 }
                 reader.Close();

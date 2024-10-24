@@ -61,7 +61,7 @@ namespace Control
             return _faturamentoRepository.ObterFaturamentoMensalPorAno(ano);
         }
 
-        public Dictionary<int, int> ObterPlanoMaisAdquirido(int ano)
+        public Dictionary<int, int> ObterPlanoMaisAdquirido()
         {
             return _faturamentoRepository.ObterPlanoMaisAdquirido();
         }
