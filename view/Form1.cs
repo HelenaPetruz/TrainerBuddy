@@ -16,12 +16,11 @@ namespace view
     {
         //private TrainnerBuddy2 frm;
 
-        private  PessoaControl _pessoaControl;
+        private  PessoaControl _pessoaControl = new PessoaControl();
 
         public TrainnerBuddy1()
         {
 
-            _pessoaControl = new PessoaControl();
             //frm = new TrainnerBuddy2();
 
             Thread thread = new Thread(new ThreadStart(splashScreen));
@@ -84,7 +83,7 @@ namespace view
             string teste = " ";
            
 
-            if (_pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text).Equals( "SUCESSO"))
+            if (_pessoaControl.ValidaEntrada(txtUsuario1.Text, txtSenha1.Text).Equals("SUCESSO"))
             {
                 TrainnerBuddy3 frm = new TrainnerBuddy3();
                 frm.Show();
