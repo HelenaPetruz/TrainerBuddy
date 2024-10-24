@@ -45,7 +45,12 @@ namespace view
             chartFaturamento.ChartAreas[0].AxisX.Title = "Meses";
             chartFaturamento.ChartAreas[0].AxisY.Title = "Faturamento Total";
 
-          
+            chartFaturamento.Legends.Clear();
+            chartFaturamento.Legends.Add("LegendaFaturamento");
+            chartFaturamento.Legends["LegendaFaturamento"].Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            chartFaturamento.Legends["LegendaFaturamento"].Alignment = System.Drawing.StringAlignment.Center;
+            chartFaturamento.Legends["LegendaFaturamento"].Title = "Legenda do Gráfico";
+
         }
 
         private void PreencherGrafico(Dictionary<int, double> faturamentoMensal)
@@ -141,11 +146,19 @@ namespace view
             if (faturamentoMensal != null && faturamentoMensal.Count > 0)
             {
                 PreencherGrafico(faturamentoMensal);
+                lblEixox.Visible = true;
+                lblEixoy.Visible = true;
             }
             else
             {
                 MessageBox.Show("Nenhum dado encontrado para o ano selecionado.");
             }
+
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

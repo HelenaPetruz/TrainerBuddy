@@ -227,5 +227,38 @@ namespace Model
             return faturamentoPorMes;
         }
 
+        public Dictionary<int, int> ObterPlanoMaisAdquirido()
+        {
+            Dictionary<int, int> planoMaisAdquirido = new Dictionary<int, int>();
+            try
+            {
+                Connection.getConnection();
+                String sqlSelect = "SELECT id_plano, COUNT(*) AS totalPessoas FROM pessoa where id_perfil = 1 group by id_plano;";
+
+                MySqlCommand cmd = new MySqlCommand(sqlSelect, Connection.SqlCon);
+               
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int idPlano = reader.GetInt32("id_plano");
+                    int totalPessoas = reader.GetInt32("totaPessoas");
+                    planoMaisAdquirido[idPlano] = totalPessoas;
+                }
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                planoMaisAdquirido = null;
+            }
+            finally
+            {
+                if (Connection.SqlCon.State == ConnectionState.Open)
+                    Connection.SqlCon.Close();
+            }
+
+            return planoMaisAdquirido;
+        }
     }
 }
