@@ -164,6 +164,8 @@ namespace view
             lblAno.Visible = true;
             txtAno.Visible = true;
             btnGerarGrafico.Visible = true;
+            lblEixox.Visible = false;
+            lblEixoy.Visible = false;
         }
 
         private void btnGerarGrafico_Click(object sender, EventArgs e)
@@ -172,13 +174,23 @@ namespace view
             txtAno.Visible = true;
             btnGerarGrafico.Visible = true;
 
-            int ano = int.Parse(txtAno.Text);
+            int ano = 0;
+            try
+            {
+                ano = int.Parse(txtAno.Text);
+            }
+            catch(System.FormatException ex)
+            {
+                MessageBox.Show("Digite um ano!");
+            }
 
             Dictionary<int, double> faturamentoMensal = caixaControl.ObterFaturamentoMensalPorAno(ano);
 
             if (faturamentoMensal != null && faturamentoMensal.Count > 0)
             {
                 PreencherGrafico(faturamentoMensal);
+                lblEixoy.Text = "Faturamento em R$";
+                lblEixox.Text = "Meses";
                 lblEixox.Visible = true;
                 lblEixoy.Visible = true;
             }
@@ -191,9 +203,15 @@ namespace view
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
+            lblEixoy.Text = "Nº de usuários";
+            lblEixox.Text = "Id do plano";
+            lblEixox.Visible = true;
+            lblEixoy.Visible = true;
+            btnGerarGrafico.Visible = false;
             lblAno.Visible = false;
             txtAno.Visible = false;
-            btnGerarGrafico.Visible = false;
+
+
             chartFaturamento.Series.Clear();
             Series planoMaisAdquirido = new Series("PlanoMaisAdquirido");
             planoMaisAdquirido.ChartType = SeriesChartType.Column;

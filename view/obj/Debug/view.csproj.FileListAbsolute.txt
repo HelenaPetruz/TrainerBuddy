@@ -148,7 +148,6 @@ C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\vie
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.Properties.Resources.resources
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.csproj.GenerateResource.cache
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.csproj.CoreCompileInputs.cache
-C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.csproj.CopyComplete
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.exe
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.pdb
 C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.frmGrafico.resources
@@ -205,3 +204,4 @@ D:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.CoreCompileInputs.cache
 D:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.csproj.CopyComplete
 D:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.exe
 D:\2024\PI\tccTrainerBuddy\view\obj\Debug\view.pdb
+C:\Users\aless\OneDrive - Universidade Estadual de Campinas\TCC\Descktop ADM\view\obj\Debug\view.csproj.Up2Date
