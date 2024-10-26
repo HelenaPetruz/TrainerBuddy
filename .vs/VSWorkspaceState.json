@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\ADMTrainerBuddy",
+    "\\Model",
     "\\view"
   ],
-  "SelectedNode": "\\view\\frmGrafico.cs",
+  "SelectedNode": "\\view\\Form2.cs",
   "PreviewInSolutionExplorer": false
 }

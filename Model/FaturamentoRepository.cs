@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlTypes;
@@ -198,7 +199,7 @@ namespace Model
             try
             {
                 Connection.getConnection();
-                String sqlSelect = "SELECT MONTH(f.data_compra) AS mes, SUM(p.valor) AS totalMensal FROM Faturamento f JOIN Plano p ON f.id_Plano = p.id_Plano WHERE YEAR(f.data_compra) = @pAno GROUP BY MONTH (f.data_compra) ORDER BY MONTH (f.data_compra)";
+                String sqlSelect = "SELECT MONTH(f.data_compra) AS mes, SUM(p.valor) AS totalMensal FROM Faturamento f JOIN plano p ON f.id_Plano = p.id_plano WHERE YEAR(f.data_compra) = @pAno GROUP BY MONTH (f.data_compra) ORDER BY MONTH (f.data_compra)";
 
                 MySqlCommand cmd = new MySqlCommand(sqlSelect, Connection.SqlCon);
                 cmd.Parameters.AddWithValue("@pAno", ano);
@@ -226,5 +227,38 @@ namespace Model
             return faturamentoPorMes;
         }
 
+        public Dictionary<int, int> ObterPlanoMaisAdquirido()
+        {
+            Dictionary<int, int> planoMaisAdquirido = new Dictionary<int, int>();
+            try
+            {
+                Connection.getConnection();
+                String sqlSelect = "SELECT id_plano, COUNT(*) AS totalPessoas FROM pessoa where id_perfil = 1 group by id_plano;";
+
+                MySqlCommand cmd = new MySqlCommand(sqlSelect, Connection.SqlCon);
+               
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int idPlano = reader.GetInt32("id_plano");
+                    int totalPessoas = reader.GetInt32("totalPessoas");
+                    planoMaisAdquirido[idPlano] = totalPessoas;
+                }
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                planoMaisAdquirido = null;
+            }
+            finally
+            {
+                if (Connection.SqlCon.State == ConnectionState.Open)
+                    Connection.SqlCon.Close();
+            }
+
+            return planoMaisAdquirido;
+        }
     }
 }
