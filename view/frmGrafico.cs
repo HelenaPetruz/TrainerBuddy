@@ -1,14 +1,17 @@
 ﻿using Control;
+using PdfSharp.Drawing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace view
 {
@@ -30,7 +33,7 @@ namespace view
 
         private void frmGrafico_Load(object sender, EventArgs e)
         {
-          
+
         }
 
         private void ConfigurarGrafico()
@@ -152,11 +155,6 @@ namespace view
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnFaturamentoMensal_Click(object sender, EventArgs e)
         {
             chartFaturamento.Series.Clear();
@@ -180,14 +178,14 @@ namespace view
             lblAno.Visible = true;
             txtAno.Visible = true;
             btnGerarGrafico.Visible = true;
-            
+
 
             int ano = 0;
             try
             {
                 ano = int.Parse(txtAno.Text);
             }
-            catch(System.FormatException ex)
+            catch (System.FormatException ex)
             {
                 MessageBox.Show("Digite um ano!");
             }
@@ -240,33 +238,87 @@ namespace view
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
-            printPreviewDialog.Document = printDocument1; 
+            printPreviewDialog.Document = printDocument1;
             printPreviewDialog.ShowDialog();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-                string titulo = lblTituloGrafico.Text;
-                Font fonteTitulo = new Font("Arial", 14, FontStyle.Bold);
-                Font fonteEixos = new Font("Arial", 10, FontStyle.Regular);
-                Brush brush = Brushes.Black;
+            string titulo = lblTituloGrafico.Text;
+            Font fonteTitulo = new Font("Arial", 14, FontStyle.Bold);
+            Font fonteEixos = new Font("Arial", 10, FontStyle.Regular);
+            Brush brush = Brushes.Black;
 
-                float posTituloX = e.MarginBounds.Left + (e.MarginBounds.Width / 2) - 150;
-                float posTituloY = e.MarginBounds.Top + 5;
-                float posEixoY = e.MarginBounds.Left + 10;
-                float posEixoX = e.MarginBounds.Bottom - 700;
+            float posTituloX = e.MarginBounds.Left + (e.MarginBounds.Width / 2) - 150;
+            float posTituloY = e.MarginBounds.Top + 5;
+            float posEixoY = e.MarginBounds.Left + 10;
+            float posEixoX = e.MarginBounds.Bottom - 700;
 
-                e.Graphics.DrawString(titulo, fonteTitulo, brush, posTituloX, posTituloY);
+            e.Graphics.DrawString(titulo, fonteTitulo, brush, posTituloX, posTituloY);
 
-                using (Bitmap bitmap = new Bitmap(chartFaturamento.Width, chartFaturamento.Height))
-                {
-                    chartFaturamento.DrawToBitmap(bitmap, new Rectangle(0, 0, chartFaturamento.Width, chartFaturamento.Height));
-                    float posGraficoY = posTituloY + 40;
-                    e.Graphics.DrawImage(bitmap, e.MarginBounds.Left, posGraficoY);
-                }
+            using (Bitmap bitmap = new Bitmap(chartFaturamento.Width, chartFaturamento.Height))
+            {
+                chartFaturamento.DrawToBitmap(bitmap, new Rectangle(0, 0, chartFaturamento.Width, chartFaturamento.Height));
+                float posGraficoY = posTituloY + 40;
+                e.Graphics.DrawImage(bitmap, e.MarginBounds.Left, posGraficoY);
+            }
 
             e.Graphics.DrawString(lblEixox.Text, fonteEixos, brush, e.MarginBounds.Left + (e.MarginBounds.Width / 2) + 260, posEixoX); // Eixo X
             e.Graphics.DrawString(lblEixoy.Text, fonteEixos, brush, posEixoY, e.MarginBounds.Top + 40); // Eixo Y
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PDF File|*.pdf";
+                saveFileDialog.Title = "Salvar gráfico como PDF";
+                saveFileDialog.FileName = "Grafico.pdf";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+
+                    // Configure o PrintDocument para desenhar em uma imagem ao invés de na tela
+                    Bitmap bitmap = new Bitmap(printDocument1.DefaultPageSettings.PaperSize.Width, printDocument1.DefaultPageSettings.PaperSize.Height);
+                    using (Graphics graphics = Graphics.FromImage(bitmap))
+                    {
+                        Rectangle area = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
+                        printDocument1.PrintController = new System.Drawing.Printing.StandardPrintController();
+                        printDocument1.PrintPage += (s, ev) => ev.Graphics.DrawImage(bitmap, area);
+
+                        // Simula a impressão para capturar o conteúdo
+                        printDocument1.Print();
+
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            bitmap.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                            memoryStream.Seek(0, SeekOrigin.Begin);
+
+                            // Cria o documento PDF
+                            using (var pdfDocument = new PdfSharp.Pdf.PdfDocument())
+                            {
+                                PdfSharp.Pdf.PdfPage pdfPage = pdfDocument.AddPage();
+                                XGraphics xGraphics = XGraphics.FromPdfPage(pdfPage);
+                                XImage xImage = XImage.FromStream(memoryStream);
+
+                                // Adiciona a imagem ao PDF
+                                xGraphics.DrawImage(xImage, 0, 0, pdfPage.Width, pdfPage.Height);
+                                try
+                                {
+                                    pdfDocument.Save(filePath);
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("erro");
+                                }
+                            }
+                        }
+
+                        MessageBox.Show("Gráfico salvo como PDF com sucesso!");
+                    }
+                }
             }
         }
     }
+}

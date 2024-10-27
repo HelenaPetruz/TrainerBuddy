@@ -383,7 +383,7 @@ namespace view
             this.btnDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDownload.UseVisualStyleBackColor = true;
             this.btnDownload.Visible = false;
-            this.btnDownload.Click += new System.EventHandler(this.button5_Click);
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // btnImprimir
             // 
