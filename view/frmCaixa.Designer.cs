@@ -30,7 +30,7 @@ namespace view
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCaixa));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCabecalho1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -44,7 +44,6 @@ namespace view
             this.btnFechar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgCaixa = new System.Windows.Forms.DataGridView();
@@ -224,7 +223,6 @@ namespace view
             // 
             this.panel2.BackColor = System.Drawing.Color.Navy;
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.btnRelatorio);
             this.panel2.Controls.Add(this.btnImprimir);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 72);
@@ -242,7 +240,7 @@ namespace view
             this.button3.ForeColor = System.Drawing.SystemColors.Window;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(10, 158);
+            this.button3.Location = new System.Drawing.Point(12, 17);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(142, 62);
             this.button3.TabIndex = 2;
@@ -250,24 +248,6 @@ namespace view
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnRelatorio
-            // 
-            this.btnRelatorio.FlatAppearance.BorderSize = 0;
-            this.btnRelatorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRelatorio.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btnRelatorio.Image")));
-            this.btnRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorio.Location = new System.Drawing.Point(10, 92);
-            this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(142, 60);
-            this.btnRelatorio.TabIndex = 1;
-            this.btnRelatorio.Text = "Download";
-            this.btnRelatorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRelatorio.UseVisualStyleBackColor = true;
             // 
             // btnImprimir
             // 
@@ -279,7 +259,7 @@ namespace view
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.Window;
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(10, 17);
+            this.btnImprimir.Location = new System.Drawing.Point(12, 98);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(142, 68);
             this.btnImprimir.TabIndex = 0;
@@ -326,21 +306,17 @@ namespace view
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgUsuarios.Location = new System.Drawing.Point(6, 40);
             this.dgUsuarios.Name = "dgUsuarios";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgUsuarios.RowHeadersWidth = 51;
             this.dgUsuarios.Size = new System.Drawing.Size(557, 357);
             this.dgUsuarios.TabIndex = 0;
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // printPreviewDialog1
             // 
@@ -393,7 +369,6 @@ namespace view
         private System.Windows.Forms.Button btn_fechar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Button btnRelatorio;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label label2;

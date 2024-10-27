@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
+using System.Drawing.Imaging;
 
 namespace view
 {
@@ -184,11 +188,6 @@ namespace view
             this.Close();
         }
 
-        private void btnCaixa_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             frmGrafico frm = new frmGrafico();
@@ -262,5 +261,53 @@ namespace view
             e.HasMorePages = maisPaginas;
         }
 
+        private Bitmap CapturarDataGridComoImagem()
+        {
+            Bitmap imagem = new Bitmap(dgCaixa.Width, dgCaixa.Height);
+            dgCaixa.DrawToBitmap(imagem, new Rectangle(0, 0, dgCaixa.Width, dgCaixa.Height));
+            return imagem;
+        }
+
+        private void SalvarPDFdoDataGridView(Bitmap imagemDataGrid, string caminhoArquivo)
+        {
+            using (PdfDocument documentoPDF = new PdfDocument())
+            {
+                PdfPage pagina = documentoPDF.AddPage();
+                pagina.Width = imagemDataGrid.Width;
+                pagina.Height = imagemDataGrid.Height;
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    // Converte o Bitmap para o formato de stream (PNG)
+                    imagemDataGrid.Save(memoryStream, ImageFormat.Png);
+                    memoryStream.Seek(0, SeekOrigin.Begin);
+
+                    using (XGraphics grafico = XGraphics.FromPdfPage(pagina))
+                    {
+                        XImage imagemX = XImage.FromStream(memoryStream);
+                        grafico.DrawImage(imagemX, 0, 0, pagina.Width, pagina.Height);
+                    }
+                }
+
+                documentoPDF.Save(caminhoArquivo);
+            }
+
+            MessageBox.Show("PDF do DataGridView salvo com sucesso!");
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog salvarDialogo = new SaveFileDialog
+            {
+                Filter = "Arquivo PDF (*.pdf)|*.pdf",
+                FileName = "DataGridViewExport.pdf"
+            };
+
+            if (salvarDialogo.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap imagemDataGrid = CapturarDataGridComoImagem();
+                SalvarPDFdoDataGridView(imagemDataGrid, salvarDialogo.FileName);
+            }
+        }
     }
 }

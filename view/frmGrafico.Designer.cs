@@ -46,16 +46,16 @@ namespace view
             this.btnFaturamentoMensal = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTituloGrafico = new System.Windows.Forms.Label();
             this.lblEixox = new System.Windows.Forms.Label();
             this.lblEixoy = new System.Windows.Forms.Label();
             this.btnGerarGrafico = new System.Windows.Forms.Button();
             this.lblAno = new System.Windows.Forms.Label();
             this.txtAno = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.chartFaturamento = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnDownload = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblTituloGrafico = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panelCabecalho1.SuspendLayout();
@@ -290,6 +290,18 @@ namespace view
             this.panel3.Size = new System.Drawing.Size(612, 409);
             this.panel3.TabIndex = 2;
             // 
+            // lblTituloGrafico
+            // 
+            this.lblTituloGrafico.AutoSize = true;
+            this.lblTituloGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloGrafico.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTituloGrafico.Location = new System.Drawing.Point(172, 74);
+            this.lblTituloGrafico.Name = "lblTituloGrafico";
+            this.lblTituloGrafico.Size = new System.Drawing.Size(143, 20);
+            this.lblTituloGrafico.TabIndex = 11;
+            this.lblTituloGrafico.Text = "Título do gráfico:";
+            this.lblTituloGrafico.Visible = false;
+            // 
             // lblEixox
             // 
             this.lblEixox.AutoSize = true;
@@ -353,6 +365,17 @@ namespace view
             this.txtAno.TabIndex = 6;
             this.txtAno.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(101, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(394, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Gráficos para analisar o andamento do negócio!";
+            // 
             // chartFaturamento
             // 
             chartArea1.Name = "ChartArea1";
@@ -375,9 +398,9 @@ namespace view
             this.btnDownload.ForeColor = System.Drawing.SystemColors.Window;
             this.btnDownload.Image = ((System.Drawing.Image)(resources.GetObject("btnDownload.Image")));
             this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDownload.Location = new System.Drawing.Point(283, 360);
+            this.btnDownload.Location = new System.Drawing.Point(283, 352);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(153, 43);
+            this.btnDownload.Size = new System.Drawing.Size(153, 51);
             this.btnDownload.TabIndex = 4;
             this.btnDownload.Text = "Download";
             this.btnDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -395,38 +418,15 @@ namespace view
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.Window;
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(442, 361);
+            this.btnImprimir.Location = new System.Drawing.Point(442, 352);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(147, 42);
+            this.btnImprimir.Size = new System.Drawing.Size(147, 51);
             this.btnImprimir.TabIndex = 3;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Visible = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(101, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(394, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Gráficos para analisar o andamento do negócio!";
-            // 
-            // lblTituloGrafico
-            // 
-            this.lblTituloGrafico.AutoSize = true;
-            this.lblTituloGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloGrafico.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTituloGrafico.Location = new System.Drawing.Point(172, 74);
-            this.lblTituloGrafico.Name = "lblTituloGrafico";
-            this.lblTituloGrafico.Size = new System.Drawing.Size(143, 20);
-            this.lblTituloGrafico.TabIndex = 11;
-            this.lblTituloGrafico.Text = "Título do gráfico:";
-            this.lblTituloGrafico.Visible = false;
             // 
             // printDocument1
             // 
