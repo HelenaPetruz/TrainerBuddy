@@ -21,6 +21,9 @@ namespace view
         public frmGrafico()
         {
             InitializeComponent();
+
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+
             caixaControl = new FaturamentoControl();
 
         }
@@ -233,5 +236,37 @@ namespace view
             Dictionary<int, int> planoMais = caixaControl.ObterPlanoMaisAdquirido();
             PreencherGrafico2(planoMais);
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+            printPreviewDialog.Document = printDocument1; 
+            printPreviewDialog.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+                string titulo = lblTituloGrafico.Text;
+                Font fonteTitulo = new Font("Arial", 14, FontStyle.Bold);
+                Font fonteEixos = new Font("Arial", 10, FontStyle.Regular);
+                Brush brush = Brushes.Black;
+
+                float posTituloX = e.MarginBounds.Left + (e.MarginBounds.Width / 2) - 150;
+                float posTituloY = e.MarginBounds.Top + 5;
+                float posEixoY = e.MarginBounds.Left + 10;
+                float posEixoX = e.MarginBounds.Bottom - 700;
+
+                e.Graphics.DrawString(titulo, fonteTitulo, brush, posTituloX, posTituloY);
+
+                using (Bitmap bitmap = new Bitmap(chartFaturamento.Width, chartFaturamento.Height))
+                {
+                    chartFaturamento.DrawToBitmap(bitmap, new Rectangle(0, 0, chartFaturamento.Width, chartFaturamento.Height));
+                    float posGraficoY = posTituloY + 40;
+                    e.Graphics.DrawImage(bitmap, e.MarginBounds.Left, posGraficoY);
+                }
+
+            e.Graphics.DrawString(lblEixox.Text, fonteEixos, brush, e.MarginBounds.Left + (e.MarginBounds.Width / 2) + 260, posEixoX); // Eixo X
+            e.Graphics.DrawString(lblEixoy.Text, fonteEixos, brush, posEixoY, e.MarginBounds.Top + 40); // Eixo Y
+            }
+        }
     }
-}

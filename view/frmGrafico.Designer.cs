@@ -29,7 +29,7 @@ namespace view
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGrafico));
             this.panelCabecalho1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,6 +56,8 @@ namespace view
             this.btnImprimir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTituloGrafico = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panelCabecalho1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -293,7 +295,7 @@ namespace view
             this.lblEixox.AutoSize = true;
             this.lblEixox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEixox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEixox.Location = new System.Drawing.Point(511, 331);
+            this.lblEixox.Location = new System.Drawing.Point(511, 322);
             this.lblEixox.Name = "lblEixox";
             this.lblEixox.Size = new System.Drawing.Size(54, 17);
             this.lblEixox.TabIndex = 10;
@@ -305,7 +307,7 @@ namespace view
             this.lblEixoy.AutoSize = true;
             this.lblEixoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEixoy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEixoy.Location = new System.Drawing.Point(23, 111);
+            this.lblEixoy.Location = new System.Drawing.Point(23, 102);
             this.lblEixoy.Name = "lblEixoy";
             this.lblEixoy.Size = new System.Drawing.Size(150, 17);
             this.lblEixoy.TabIndex = 9;
@@ -353,9 +355,9 @@ namespace view
             // 
             // chartFaturamento
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartFaturamento.ChartAreas.Add(chartArea4);
-            this.chartFaturamento.Location = new System.Drawing.Point(18, 105);
+            chartArea1.Name = "ChartArea1";
+            this.chartFaturamento.ChartAreas.Add(chartArea1);
+            this.chartFaturamento.Location = new System.Drawing.Point(18, 96);
             this.chartFaturamento.Margin = new System.Windows.Forms.Padding(2);
             this.chartFaturamento.Name = "chartFaturamento";
             this.chartFaturamento.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
@@ -401,6 +403,7 @@ namespace view
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Visible = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // label2
             // 
@@ -418,12 +421,26 @@ namespace view
             this.lblTituloGrafico.AutoSize = true;
             this.lblTituloGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloGrafico.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTituloGrafico.Location = new System.Drawing.Point(172, 83);
+            this.lblTituloGrafico.Location = new System.Drawing.Point(172, 74);
             this.lblTituloGrafico.Name = "lblTituloGrafico";
             this.lblTituloGrafico.Size = new System.Drawing.Size(143, 20);
             this.lblTituloGrafico.TabIndex = 11;
             this.lblTituloGrafico.Text = "Título do gráfico:";
             this.lblTituloGrafico.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // frmGrafico
             // 
@@ -478,6 +495,8 @@ namespace view
         private System.Windows.Forms.Label lblEixox;
         private System.Windows.Forms.Label lblEixoy;
         private System.Windows.Forms.Label lblTituloGrafico;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
 
