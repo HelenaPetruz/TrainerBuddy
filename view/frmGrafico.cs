@@ -166,13 +166,18 @@ namespace view
             btnGerarGrafico.Visible = true;
             lblEixox.Visible = false;
             lblEixoy.Visible = false;
+            btnImprimir.Visible = false;
+            btnDownload.Visible = false;
+            lblTituloGrafico.Visible = false;
         }
 
         private void btnGerarGrafico_Click(object sender, EventArgs e)
         {
+
             lblAno.Visible = true;
             txtAno.Visible = true;
             btnGerarGrafico.Visible = true;
+            
 
             int ano = 0;
             try
@@ -193,6 +198,11 @@ namespace view
                 lblEixox.Text = "Meses";
                 lblEixox.Visible = true;
                 lblEixoy.Visible = true;
+                btnImprimir.Visible = true;
+                btnDownload.Visible = true;
+                lblTituloGrafico.Text = "Faturamento Mensal do ano de " + txtAno.Text;
+                lblTituloGrafico.Visible = true;
+                txtAno.Clear();
             }
             else
             {
@@ -207,9 +217,13 @@ namespace view
             lblEixox.Text = "Id do plano";
             lblEixox.Visible = true;
             lblEixoy.Visible = true;
+            lblTituloGrafico.Text = "Quantidade de usuários por plano";
+            lblTituloGrafico.Visible = true;
             btnGerarGrafico.Visible = false;
             lblAno.Visible = false;
             txtAno.Visible = false;
+            btnImprimir.Visible = true;
+            btnDownload.Visible = true;
 
 
             chartFaturamento.Series.Clear();
