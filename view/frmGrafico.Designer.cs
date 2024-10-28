@@ -29,7 +29,7 @@ namespace view
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGrafico));
             this.panelCabecalho1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,15 +46,18 @@ namespace view
             this.btnFaturamentoMensal = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTituloGrafico = new System.Windows.Forms.Label();
+            this.lblEixox = new System.Windows.Forms.Label();
+            this.lblEixoy = new System.Windows.Forms.Label();
             this.btnGerarGrafico = new System.Windows.Forms.Button();
             this.lblAno = new System.Windows.Forms.Label();
             this.txtAno = new System.Windows.Forms.TextBox();
-            this.chartFaturamento = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblEixoy = new System.Windows.Forms.Label();
-            this.lblEixox = new System.Windows.Forms.Label();
+            this.chartFaturamento = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnDownload = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panelCabecalho1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -271,20 +274,57 @@ namespace view
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblTituloGrafico);
             this.panel3.Controls.Add(this.lblEixox);
             this.panel3.Controls.Add(this.lblEixoy);
             this.panel3.Controls.Add(this.btnGerarGrafico);
             this.panel3.Controls.Add(this.lblAno);
             this.panel3.Controls.Add(this.txtAno);
-            this.panel3.Controls.Add(this.chartFaturamento);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.chartFaturamento);
+            this.panel3.Controls.Add(this.btnDownload);
+            this.panel3.Controls.Add(this.btnImprimir);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(188, 72);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(612, 409);
             this.panel3.TabIndex = 2;
+            // 
+            // lblTituloGrafico
+            // 
+            this.lblTituloGrafico.AutoSize = true;
+            this.lblTituloGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloGrafico.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTituloGrafico.Location = new System.Drawing.Point(172, 74);
+            this.lblTituloGrafico.Name = "lblTituloGrafico";
+            this.lblTituloGrafico.Size = new System.Drawing.Size(143, 20);
+            this.lblTituloGrafico.TabIndex = 11;
+            this.lblTituloGrafico.Text = "Título do gráfico:";
+            this.lblTituloGrafico.Visible = false;
+            // 
+            // lblEixox
+            // 
+            this.lblEixox.AutoSize = true;
+            this.lblEixox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEixox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEixox.Location = new System.Drawing.Point(511, 322);
+            this.lblEixox.Name = "lblEixox";
+            this.lblEixox.Size = new System.Drawing.Size(54, 17);
+            this.lblEixox.TabIndex = 10;
+            this.lblEixox.Text = "Meses";
+            this.lblEixox.Visible = false;
+            // 
+            // lblEixoy
+            // 
+            this.lblEixoy.AutoSize = true;
+            this.lblEixoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEixoy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEixoy.Location = new System.Drawing.Point(23, 102);
+            this.lblEixoy.Name = "lblEixoy";
+            this.lblEixoy.Size = new System.Drawing.Size(150, 17);
+            this.lblEixoy.TabIndex = 9;
+            this.lblEixoy.Text = "Faturamento em R$";
+            this.lblEixoy.Visible = false;
             // 
             // btnGerarGrafico
             // 
@@ -295,9 +335,9 @@ namespace view
             this.btnGerarGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGerarGrafico.ForeColor = System.Drawing.SystemColors.Window;
             this.btnGerarGrafico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGerarGrafico.Location = new System.Drawing.Point(359, 41);
+            this.btnGerarGrafico.Location = new System.Drawing.Point(357, 36);
             this.btnGerarGrafico.Name = "btnGerarGrafico";
-            this.btnGerarGrafico.Size = new System.Drawing.Size(136, 42);
+            this.btnGerarGrafico.Size = new System.Drawing.Size(136, 29);
             this.btnGerarGrafico.TabIndex = 8;
             this.btnGerarGrafico.Text = "Gerar gráfico";
             this.btnGerarGrafico.UseVisualStyleBackColor = true;
@@ -309,7 +349,7 @@ namespace view
             this.lblAno.AutoSize = true;
             this.lblAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAno.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblAno.Location = new System.Drawing.Point(120, 52);
+            this.lblAno.Location = new System.Drawing.Point(110, 41);
             this.lblAno.Name = "lblAno";
             this.lblAno.Size = new System.Drawing.Size(111, 20);
             this.lblAno.TabIndex = 7;
@@ -318,96 +358,89 @@ namespace view
             // 
             // txtAno
             // 
-            this.txtAno.Location = new System.Drawing.Point(226, 54);
+            this.txtAno.Location = new System.Drawing.Point(224, 41);
             this.txtAno.Margin = new System.Windows.Forms.Padding(2);
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(128, 20);
             this.txtAno.TabIndex = 6;
             this.txtAno.Visible = false;
             // 
-            // chartFaturamento
-            // 
-            chartArea4.Name = "ChartArea1";
-            this.chartFaturamento.ChartAreas.Add(chartArea4);
-            this.chartFaturamento.Location = new System.Drawing.Point(18, 88);
-            this.chartFaturamento.Margin = new System.Windows.Forms.Padding(2);
-            this.chartFaturamento.Name = "chartFaturamento";
-            this.chartFaturamento.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            this.chartFaturamento.Size = new System.Drawing.Size(571, 263);
-            this.chartFaturamento.TabIndex = 5;
-            this.chartFaturamento.Text = "chartFaturamento";
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.Window;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(283, 356);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(153, 42);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Download";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Window;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(442, 356);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(147, 42);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Imprimir";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(112, 6);
+            this.label2.Location = new System.Drawing.Point(101, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(394, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Gráficos para analisar o andamento do negócio!";
             // 
-            // lblEixoy
+            // chartFaturamento
             // 
-            this.lblEixoy.AutoSize = true;
-            this.lblEixoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEixoy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEixoy.Location = new System.Drawing.Point(37, 91);
-            this.lblEixoy.Name = "lblEixoy";
-            this.lblEixoy.Size = new System.Drawing.Size(150, 17);
-            this.lblEixoy.TabIndex = 9;
-            this.lblEixoy.Text = "Faturamento em R$";
-            this.lblEixoy.Visible = false;
+            chartArea1.Name = "ChartArea1";
+            this.chartFaturamento.ChartAreas.Add(chartArea1);
+            this.chartFaturamento.Location = new System.Drawing.Point(18, 96);
+            this.chartFaturamento.Margin = new System.Windows.Forms.Padding(2);
+            this.chartFaturamento.Name = "chartFaturamento";
+            this.chartFaturamento.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.chartFaturamento.Size = new System.Drawing.Size(571, 251);
+            this.chartFaturamento.TabIndex = 5;
+            this.chartFaturamento.Text = "chartFaturamento";
             // 
-            // lblEixox
+            // btnDownload
             // 
-            this.lblEixox.AutoSize = true;
-            this.lblEixox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEixox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEixox.Location = new System.Drawing.Point(524, 322);
-            this.lblEixox.Name = "lblEixox";
-            this.lblEixox.Size = new System.Drawing.Size(54, 17);
-            this.lblEixox.TabIndex = 10;
-            this.lblEixox.Text = "Meses";
-            this.lblEixox.Visible = false;
+            this.btnDownload.FlatAppearance.BorderSize = 0;
+            this.btnDownload.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnDownload.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDownload.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnDownload.Image = ((System.Drawing.Image)(resources.GetObject("btnDownload.Image")));
+            this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDownload.Location = new System.Drawing.Point(283, 352);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(153, 51);
+            this.btnDownload.TabIndex = 4;
+            this.btnDownload.Text = "Download";
+            this.btnDownload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDownload.UseVisualStyleBackColor = true;
+            this.btnDownload.Visible = false;
+            this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(442, 352);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(147, 51);
+            this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Visible = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // frmGrafico
             // 
@@ -453,14 +486,17 @@ namespace view
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnDownload;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartFaturamento;
         private System.Windows.Forms.Button btnGerarGrafico;
         private System.Windows.Forms.Label lblAno;
         private System.Windows.Forms.TextBox txtAno;
         private System.Windows.Forms.Label lblEixox;
         private System.Windows.Forms.Label lblEixoy;
+        private System.Windows.Forms.Label lblTituloGrafico;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
 
