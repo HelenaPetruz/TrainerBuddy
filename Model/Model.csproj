@@ -34,6 +34,9 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\ADMTrainerBuddy\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\ADMTrainerBuddy\packages\FluentValidation.11.10.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.26.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\ADMTrainerBuddy\packages\Google.Protobuf.3.26.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -95,13 +98,17 @@
   <ItemGroup>
     <Compile Include="Cond_pagamento.cs" />
     <Compile Include="Cond_pagamentoRepository.cs" />
+    <Compile Include="Cond_pagamentoValidation.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Faturamento.cs" />
     <Compile Include="FaturamentoRepository.cs" />
+    <Compile Include="FaturamentoValidation.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="PessoaRepository.cs" />
+    <Compile Include="PessoaValidation.cs" />
     <Compile Include="Plano.cs" />
     <Compile Include="PlanoRepository.cs" />
+    <Compile Include="PlanoValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
