@@ -12,9 +12,9 @@ namespace Control
     {
         private FaturamentoRepository _faturamentoRepository;
 
-        public FaturamentoControl(FaturamentoRepository faturamentoRepository)
+        public FaturamentoControl()
         {
-            _faturamentoRepository = faturamentoRepository;
+            _faturamentoRepository = new FaturamentoRepository();
         }
 
         public string Update(int id_Usuario, int id_Plano, DateTime vencimento, DateTime data_compra)
@@ -44,6 +44,26 @@ namespace Control
         public DataTable getAll()
         {
             return _faturamentoRepository.getAll();
+        }
+
+        public string getPrice(int id_plano)
+        {
+            return _faturamentoRepository.getPrice(id_plano);
+        }
+
+        public string getNomePlano (int id_plano)
+        {
+            return _faturamentoRepository.getNomePlano(id_plano);
+        }
+
+        public Dictionary<int, double> ObterFaturamentoMensalPorAno(int ano)
+        {
+            return _faturamentoRepository.ObterFaturamentoMensalPorAno(ano);
+        }
+
+        public Dictionary<int, int> ObterPlanoMaisAdquirido()
+        {
+            return _faturamentoRepository.ObterPlanoMaisAdquirido();
         }
     }
 }

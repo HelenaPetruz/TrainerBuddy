@@ -118,17 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDownload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAblJREFUeF7t
-        muFtwkAUg1kAZkLiB6uwBWzWOTpA50if89yAT7RqdBflEvmTngpn4lhWlSL1HYwxxhhjzD8ZhuEYc455
-        dDbIdGTMZYgb3GK+YnoF2W6M25Ywvoy32AYXxm5DGJ5iPkfrbYCsJ8avJ8yuo+22uDJ+PWGGh0xJ+RBq
-        MXfO6+vX93/9LHkwfj0wS0+h3Q0qQZaMJLgAyvXALD0FF0B5dZAlIwn9FoBrYz6KqfUr6b6AEhdAeTa4
-        Ni0EF0C5Hpilp+ACKM8G16aFsP0C4gxfS3++mo5DSaBWsosC8OdMoCTEsQtIVXABlGeDa9NC6LoAPCdK
-        7pRnE9f6NyAtBBdAuR6YpafgAihPxJkLSOkJJSGOXUCqwtvAcQ5PGUoTcbbrAkpcAKWJOHMBKQkugHI9
-        MEtPwQVQnogzF5DSE0pCHLuAVIXdFCBDSYhz+JWf/a2A8nP9FrAWyJKRBBdAuR6YpafgAiivDrJkJGH5
-        AipG/nfQaEqaFoAlxK1xZvx6wgzboT0vSJYga9ut0TDEluhWWHRbtOeFSWRruyVaEjfA1igWJ989iNYc
-        ZGq3HWqMMcYYs28Oh29fyYx6Ma9S/AAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAaBJREFUeF7t
+        1tFtwzAMBNDMkykyWv8yQ/bqFAE6g6szT0Zoy07swrbE3gOEJKZa8vgR5CIiIiIiB+q67qt0WI6Pgce0
+        AJbjQ1jL7GgBLMeHsJbZ0QJYjg9hLbOjBbAcH8JaZkcLYDk+hLXMjhbAcnwIa5kdLYDl+BDWMjuxFrAU
+        CLU+srd4n2/bgIH7SDOD47mVnXd321gCBrV5B5PB8cxKzif36l4CBrQ5J9zg+GyPnU/uQL1LSMNd0/nu
+        x5waBsd7e+S8qwP+95XX6oQBOWhJHxKv9tFZqkH94TMMyoFLELC4AJ6SdsJnGJiDl8wtoKS98BkGZ4Ct
+        2g2fIQCDrNV++AxBGOhTccJnCMRg78QLnyEYA86JGz5DQAYdix8+Q1AGzv5P+AyBGbyt8GnYWzr5V9tw
+        WF4l/R2WsCn8a++Xc2N5P2iSztimBfwFelprRwtgeT9oYr0cLYDlw6CntXbOW8BJZ2z/BUBq9LR+VXly
+        vP2lZg/rWZUHxzsGm1aDYx0r9b2n89NPcA70vnOc86Qh8MV4+GF7ERERERGRlS6XX0N/8HcVTwqcAAAA
+        AElFTkSuQmCC
 </value>
   </data>
   <data name="btnImprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -326,6 +326,6 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>144</value>
+    <value>127</value>
   </metadata>
 </root>
