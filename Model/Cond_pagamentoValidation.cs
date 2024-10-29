@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Cond_pagamentoValidation: AbstractValidator<Cond_pagamento>
+    public class Cond_pagamentoValidation:AbstractValidator<Cond_pagamento>
     {
     }
 }
