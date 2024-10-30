@@ -1,7 +1,10 @@
 ﻿using Control;
+using FluentValidation.Results;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -10,6 +13,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using FluentValidation.Results;
+using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace view
 {
@@ -66,17 +71,46 @@ namespace view
 
         private void btnEntrar1_Click(object sender, EventArgs e)
         {
-          
+            Pessoa pessoa = new Pessoa();
+            pessoa.email = txtUsuario1.Text;
 
-            if (_pessoaControl.Cadastro(txtUsuario1.Text, txtSenha1.Text, txtRepita.Text).Equals("SUCESSO"))
+            if (txtSenha1.Text.Equals(txtRepita.Text))
             {
-                this.Close();
-                frm.Show();
+                pessoa.senha = txtSenha1.Text;
             }
             else
             {
-                MessageBox.Show("Email ou senha inválidos ",  "Aviso do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Email ou senha inválidos ", "Aviso do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            if(pessoa != null)
+            {
+                PessoaValidation validator = new PessoaValidation();
+                ValidationResult results = validator.Validate(pessoa);
+                IList<ValidationFailure> failures = results.Errors;
+                if (!results.IsValid)
+                {
+                    foreach (ValidationFailure failure in failures)
+                    {
+                        MessageBox.Show(failure.ErrorMessage, "Aviso do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+                else
+                {
+                    if (_pessoaControl.Cadastro(txtUsuario1.Text, txtSenha1.Text, txtRepita.Text).Equals("SUCESSO"))
+                    {
+                        this.Close();
+                        frm.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email ou senha inválidos ", "Aviso do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+
+          
 
         }
     }
