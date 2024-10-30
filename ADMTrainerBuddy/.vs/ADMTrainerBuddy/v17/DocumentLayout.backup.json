@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "E:\\2024\\PI\\tccTrainerBuddy\\ADMTrainerBuddy\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|e:\\2024\\pi\\tcctrainerbuddy\\model\\planovalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|e:\\2024\\pi\\tcctrainerbuddy\\model\\faturamentovalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|e:\\2024\\pi\\tcctrainerbuddy\\model\\cond_pagamentovalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|e:\\2024\\pi\\tcctrainerbuddy\\model\\pessoavalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|e:\\2024\\pi\\tcctrainerbuddy\\view\\frmplanos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -21,25 +33,77 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PlanoValidation.cs",
+              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\PlanoValidation.cs",
+              "RelativeDocumentMoniker": "..\\Model\\PlanoValidation.cs",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\PlanoValidation.cs",
+              "RelativeToolTip": "..\\Model\\PlanoValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T12:17:09.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FaturamentoValidation.cs",
+              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\FaturamentoValidation.cs",
+              "RelativeDocumentMoniker": "..\\Model\\FaturamentoValidation.cs",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\FaturamentoValidation.cs",
+              "RelativeToolTip": "..\\Model\\FaturamentoValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T12:16:05.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cond_pagamentoValidation.cs",
+              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\Cond_pagamentoValidation.cs",
+              "RelativeDocumentMoniker": "..\\Model\\Cond_pagamentoValidation.cs",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\Cond_pagamentoValidation.cs",
+              "RelativeToolTip": "..\\Model\\Cond_pagamentoValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T12:14:49.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PessoaValidation.cs",
+              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\PessoaValidation.cs",
+              "RelativeDocumentMoniker": "..\\Model\\PessoaValidation.cs",
+              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\Model\\PessoaValidation.cs",
+              "RelativeToolTip": "..\\Model\\PessoaValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T12:10:00.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "frmPlanos.cs [Design]",
               "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs",
               "RelativeDocumentMoniker": "..\\view\\frmPlanos.cs",
               "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs [Design]",
               "RelativeToolTip": "..\\view\\frmPlanos.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T11:57:33.91Z",
+              "WhenOpened": "2024-10-28T12:04:47.117Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "frmCaixa.cs [Design]",
               "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmCaixa.cs",
               "RelativeDocumentMoniker": "..\\view\\frmCaixa.cs",
               "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmCaixa.cs [Design]",
               "RelativeToolTip": "..\\view\\frmCaixa.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T11:52:12.654Z",
+              "WhenOpened": "2024-10-28T12:00:09.192Z",
               "EditorCaption": " [Design]"
             }
           ]
