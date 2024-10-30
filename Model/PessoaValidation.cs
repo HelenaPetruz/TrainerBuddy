@@ -19,7 +19,7 @@ namespace Model
 
             RuleFor(pessoa => pessoa.senha).NotEmpty().WithMessage("Ops, você esqueceu de inserir sua senha :(");
 
-            RuleFor(pessoa => pessoa.senha).Length(6, 45).WithMessage("Ops senha muito curta ou longa demais, tente outraa senha :(");
+            RuleFor(pessoa => pessoa.senha).Length(6, 45).WithMessage("Ops senha muito curta ou longa demais, tente outra senha :(");
         }
     }
 }
