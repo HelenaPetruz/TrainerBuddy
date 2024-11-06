@@ -15,26 +15,43 @@ namespace Model
         {
         }
 
-        public string Insert (Pessoa pessoa)
+        public string Insert(Pessoa pessoa)
         {
-           string resp="";
+            string resp = "";
             try
             {
                 Connection.getConnection();
-                MySqlCommand SqlCmd = new MySqlCommand
+                MySqlCommand checkEmailCmd = new MySqlCommand
                 {
                     Connection = Connection.SqlCon,
-                    CommandText = "INSERT INTO pessoa (nome_usuario,cpf,email,senha,id_plano,id_perfil) VALUES (@pNome_usuario,@pCpf,@pEmail,@pSenha,@pId_plano,@pId_perfil)",
+                    CommandText = "SELECT COUNT(*) FROM pessoa WHERE email = @pEmail",
                     CommandType = CommandType.Text
                 };
-                SqlCmd.Parameters.AddWithValue("pNome_usuario", pessoa.nome_usuario);
-                SqlCmd.Parameters.AddWithValue("pCpf", pessoa.cpf);
-                SqlCmd.Parameters.AddWithValue("pEmail", pessoa.email);
-                SqlCmd.Parameters.AddWithValue("pSenha", pessoa.senha);
-                SqlCmd.Parameters.AddWithValue("pId_plano", pessoa.id_plano);
-                SqlCmd.Parameters.AddWithValue("pId_perfil", pessoa.id_perfil);
+                checkEmailCmd.Parameters.AddWithValue("pEmail", pessoa.email);
 
-                resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
+                int emailCount = Convert.ToInt32(checkEmailCmd.ExecuteScalar());
+
+                if (emailCount > 0)
+                {
+                    resp = "Erro: E-mail já cadastrado.";
+                }
+                else
+                {
+                    MySqlCommand SqlCmd = new MySqlCommand
+                    {
+                        Connection = Connection.SqlCon,
+                        CommandText = "INSERT INTO pessoa (nome_usuario, cpf, email, senha, id_plano, id_perfil) VALUES (@pNome_usuario, @pCpf, @pEmail, @pSenha, @pId_plano, @pId_perfil)",
+                        CommandType = CommandType.Text
+                    };
+                    SqlCmd.Parameters.AddWithValue("pNome_usuario", pessoa.nome_usuario);
+                    SqlCmd.Parameters.AddWithValue("pCpf", pessoa.cpf);
+                    SqlCmd.Parameters.AddWithValue("pEmail", pessoa.email);
+                    SqlCmd.Parameters.AddWithValue("pSenha", pessoa.senha);
+                    SqlCmd.Parameters.AddWithValue("pId_plano", pessoa.id_plano);
+                    SqlCmd.Parameters.AddWithValue("pId_perfil", pessoa.id_perfil);
+
+                    resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
+                }
             }
             catch (Exception ex)
             {
@@ -46,8 +63,8 @@ namespace Model
                     Connection.SqlCon.Close();
             }
             return resp;
-
         }
+
 
         public string Update(Pessoa pessoa)
         {
@@ -230,19 +247,35 @@ namespace Model
             string resp = "";
             if (pSenha == Repita)
             {
-
                 try
                 {
                     Connection.getConnection();
-                    MySqlCommand SqlCmd = new MySqlCommand
+                    MySqlCommand checkEmailCmd = new MySqlCommand
                     {
                         Connection = Connection.SqlCon,
-                        CommandText = "INSERT INTO pessoa (email,senha,id_plano,id_perfil) VALUES (@pEmail,@pSenha,1,2)",
+                        CommandText = "SELECT COUNT(*) FROM pessoa WHERE email = @pEmail",
                         CommandType = CommandType.Text
                     };
-                    SqlCmd.Parameters.AddWithValue("pEmail", pEmail);
-                    SqlCmd.Parameters.AddWithValue("pSenha", pSenha);
-                    resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
+                    checkEmailCmd.Parameters.AddWithValue("pEmail", pEmail);
+
+                    int emailCount = Convert.ToInt32(checkEmailCmd.ExecuteScalar());
+
+                    if (emailCount > 0)
+                    {
+                        resp = "Erro: E-mail já cadastrado.";
+                    }
+                    else
+                    {
+                        MySqlCommand SqlCmd = new MySqlCommand
+                        {
+                            Connection = Connection.SqlCon,
+                            CommandText = "INSERT INTO pessoa (email, senha, id_plano, id_perfil) VALUES (@pEmail, @pSenha, 1, 2)",
+                            CommandType = CommandType.Text
+                        };
+                        SqlCmd.Parameters.AddWithValue("pEmail", pEmail);
+                        SqlCmd.Parameters.AddWithValue("pSenha", pSenha);
+                        resp = SqlCmd.ExecuteNonQuery() == 1 ? "SUCESSO" : "FALHA";
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -259,8 +292,8 @@ namespace Model
                 resp = "FALHA";
             }
             return resp;
-
         }
+
 
         public DataTable getUsuáriosAtivos()
         {
