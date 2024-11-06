@@ -1,12 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\2024\\PI\\tccTrainerBuddy\\ADMTrainerBuddy\\",
+  "WorkspaceRootPath": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\ADMTrainerBuddy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|e:\\2024\\pi\\tcctrainerbuddy\\view\\frmplanos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|c:\\users\\aless\\onedrive - universidade estadual de campinas\\tcc\\descktop adm\\model\\planovalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|e:\\2024\\pi\\tcctrainerbuddy\\view\\frmcaixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|c:\\users\\aless\\onedrive - universidade estadual de campinas\\tcc\\descktop adm\\model\\pessoavalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|c:\\users\\aless\\onedrive - universidade estadual de campinas\\tcc\\descktop adm\\model\\faturamentovalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33AE59C4-E3AE-46E6-8420-87FF4E49FD35}|..\\Model\\Model.csproj|c:\\users\\aless\\onedrive - universidade estadual de campinas\\tcc\\descktop adm\\model\\cond_pagamentovalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|c:\\users\\aless\\onedrive - universidade estadual de campinas\\tcc\\descktop adm\\view\\frmcaixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82FDAC26-040F-412C-91A0-53E0B384471D}|..\\view\\view.csproj|c:\\users\\aless\\onedrive - universidade estadual de campinas\\tcc\\descktop adm\\view\\frmcaixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,30 +28,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmPlanos.cs [Design]",
-              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs",
-              "RelativeDocumentMoniker": "..\\view\\frmPlanos.cs",
-              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmPlanos.cs [Design]",
-              "RelativeToolTip": "..\\view\\frmPlanos.cs [Design]",
+              "Title": "PlanoValidation.cs",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Model\\PlanoValidation.cs",
+              "RelativeDocumentMoniker": "..\\Model\\PlanoValidation.cs",
+              "ToolTip": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Model\\PlanoValidation.cs",
+              "RelativeToolTip": "..\\Model\\PlanoValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T11:57:33.91Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-28T21:49:41.952Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmCaixa.cs [Design]",
-              "DocumentMoniker": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmCaixa.cs",
+              "Title": "PessoaValidation.cs",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Model\\PessoaValidation.cs",
+              "RelativeDocumentMoniker": "..\\Model\\PessoaValidation.cs",
+              "ToolTip": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Model\\PessoaValidation.cs",
+              "RelativeToolTip": "..\\Model\\PessoaValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T21:49:40.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FaturamentoValidation.cs",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Model\\FaturamentoValidation.cs",
+              "RelativeDocumentMoniker": "..\\Model\\FaturamentoValidation.cs",
+              "ToolTip": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Model\\FaturamentoValidation.cs",
+              "RelativeToolTip": "..\\Model\\FaturamentoValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T21:49:38.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Cond_pagamentoValidation.cs",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Model\\Cond_pagamentoValidation.cs",
+              "RelativeDocumentMoniker": "..\\Model\\Cond_pagamentoValidation.cs",
+              "ToolTip": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\Model\\Cond_pagamentoValidation.cs",
+              "RelativeToolTip": "..\\Model\\Cond_pagamentoValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T21:47:28.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmCaixa.cs",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\view\\frmCaixa.cs",
               "RelativeDocumentMoniker": "..\\view\\frmCaixa.cs",
-              "ToolTip": "E:\\2024\\PI\\tccTrainerBuddy\\view\\frmCaixa.cs [Design]",
+              "ToolTip": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\view\\frmCaixa.cs",
+              "RelativeToolTip": "..\\view\\frmCaixa.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAgwBsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T16:58:54.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmCaixa.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\view\\frmCaixa.cs",
+              "RelativeDocumentMoniker": "..\\view\\frmCaixa.cs",
+              "ToolTip": "C:\\Users\\aless\\OneDrive - Universidade Estadual de Campinas\\TCC\\Descktop ADM\\view\\frmCaixa.cs [Design]",
               "RelativeToolTip": "..\\view\\frmCaixa.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T11:52:12.654Z",
+              "WhenOpened": "2024-10-26T16:58:43.015Z",
               "EditorCaption": " [Design]"
             }
           ]
