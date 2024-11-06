@@ -31,9 +31,7 @@ namespace view
         {
             this.panelCabecalho1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_maximizar = new System.Windows.Forms.Button();
             this.btn_fechar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -66,31 +64,13 @@ namespace view
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(169)))), ((int)(((byte)(33)))));
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btn_maximizar);
             this.panel1.Controls.Add(this.btn_fechar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 72);
             this.panel1.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::view.Properties.Resources.MINIMIZAR;
-            this.button1.Location = new System.Drawing.Point(592, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 50);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -101,21 +81,6 @@ namespace view
             this.label1.Size = new System.Drawing.Size(257, 39);
             this.label1.TabIndex = 3;
             this.label1.Text = "TrainnerBuddy";
-            // 
-            // btn_maximizar
-            // 
-            this.btn_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_maximizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_maximizar.FlatAppearance.BorderSize = 0;
-            this.btn_maximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_maximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btn_maximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_maximizar.Image = global::view.Properties.Resources.maximizar1;
-            this.btn_maximizar.Location = new System.Drawing.Point(661, 12);
-            this.btn_maximizar.Name = "btn_maximizar";
-            this.btn_maximizar.Size = new System.Drawing.Size(63, 50);
-            this.btn_maximizar.TabIndex = 2;
-            this.btn_maximizar.UseVisualStyleBackColor = true;
             // 
             // btn_fechar
             // 
@@ -299,9 +264,7 @@ namespace view
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_maximizar;
         private System.Windows.Forms.Button btn_fechar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnUsuarios;

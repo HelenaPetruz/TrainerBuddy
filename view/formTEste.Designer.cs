@@ -30,9 +30,7 @@ namespace view
         private void InitializeComponent()
         {
             this.panelCabecalho1 = new System.Windows.Forms.Panel();
-            this.btnMinimizar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnMaximizar1 = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.txtUsuario1 = new System.Windows.Forms.TextBox();
             this.txtSenha1 = new System.Windows.Forms.TextBox();
@@ -47,31 +45,13 @@ namespace view
             // panelCabecalho1
             // 
             this.panelCabecalho1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(169)))), ((int)(((byte)(33)))));
-            this.panelCabecalho1.Controls.Add(this.btnMinimizar);
             this.panelCabecalho1.Controls.Add(this.lblTitulo);
-            this.panelCabecalho1.Controls.Add(this.btnMaximizar1);
             this.panelCabecalho1.Controls.Add(this.btnFechar);
             this.panelCabecalho1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabecalho1.Location = new System.Drawing.Point(0, 0);
             this.panelCabecalho1.Name = "panelCabecalho1";
             this.panelCabecalho1.Size = new System.Drawing.Size(800, 72);
             this.panelCabecalho1.TabIndex = 0;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = global::view.Properties.Resources.MINIMIZAR;
-            this.btnMinimizar.Location = new System.Drawing.Point(592, 14);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(63, 50);
-            this.btnMinimizar.TabIndex = 4;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // lblTitulo
             // 
@@ -83,22 +63,6 @@ namespace view
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Cadastro TrainnerBuddy";
             this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
-            // 
-            // btnMaximizar1
-            // 
-            this.btnMaximizar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnMaximizar1.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMaximizar1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnMaximizar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar1.Image = global::view.Properties.Resources.maximizar1;
-            this.btnMaximizar1.Location = new System.Drawing.Point(661, 12);
-            this.btnMaximizar1.Name = "btnMaximizar1";
-            this.btnMaximizar1.Size = new System.Drawing.Size(63, 50);
-            this.btnMaximizar1.TabIndex = 2;
-            this.btnMaximizar1.UseVisualStyleBackColor = true;
-            this.btnMaximizar1.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnFechar
             // 
@@ -131,6 +95,7 @@ namespace view
             this.txtSenha1.Name = "txtSenha1";
             this.txtSenha1.Size = new System.Drawing.Size(267, 26);
             this.txtSenha1.TabIndex = 2;
+            this.txtSenha1.UseSystemPasswordChar = true;
             // 
             // btnEntrar1
             // 
@@ -187,6 +152,7 @@ namespace view
             this.txtRepita.Name = "txtRepita";
             this.txtRepita.Size = new System.Drawing.Size(267, 26);
             this.txtRepita.TabIndex = 11;
+            this.txtRepita.UseSystemPasswordChar = true;
             // 
             // TrainnerBuddy2
             // 
@@ -218,9 +184,7 @@ namespace view
 
         private System.Windows.Forms.Panel panelCabecalho1;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.Button btnMaximizar1;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.TextBox txtUsuario1;
         private System.Windows.Forms.TextBox txtSenha1;
         private System.Windows.Forms.Button btnEntrar1;
