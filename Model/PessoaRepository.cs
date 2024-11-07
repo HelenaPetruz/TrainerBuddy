@@ -72,12 +72,11 @@ namespace Model
             try
             {
                 Connection.getConnection();
-                string updateSql = String.Format("UPDATE pessoa SET" +" nome_usuario = @pNome_usuario, cpf = @pCpf, email = @pEmail"  + " WHERE idpessoa = @pIdpessoa");
+                string updateSql = String.Format("UPDATE pessoa SET" +" nome_usuario = @pNome_usuario, email = @pEmail"  + " WHERE idpessoa = @pIdpessoa");
                 MySqlCommand SqlCmd = new MySqlCommand(updateSql, Connection.SqlCon);
 
 
                 SqlCmd.Parameters.AddWithValue("pNome_usuario", pessoa.nome_usuario);
-                SqlCmd.Parameters.AddWithValue("pCpf", pessoa.cpf);
                 SqlCmd.Parameters.AddWithValue("pEmail", pessoa.email);
                 SqlCmd.Parameters.AddWithValue("@pIdpessoa", pessoa.idpessoa);
 
@@ -156,7 +155,7 @@ namespace Model
                 if (!string.IsNullOrEmpty(pNome_usuario))
                 {
                     selectSql = String.Format("SELECT * FROM pessoa WHERE nome_usuario LIKE @pNome_usuario");
-                    pNome_usuario = '%' + pNome_usuario + '%';
+                    pNome_usuario = pNome_usuario + '%';
                 }
                 else
                 {
